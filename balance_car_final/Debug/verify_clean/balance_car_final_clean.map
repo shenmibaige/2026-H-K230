@@ -1,0 +1,1642 @@
+******************************************************************************
+            TI ARM Clang Linker PC v4.0.4                      
+******************************************************************************
+>> Linked Sat Aug  1 11:37:59 2026
+
+OUTPUT FILE NAME:   <F:\MCU\11_TI_MSP\CCS_project\2026project\balance_car_final/Debug/verify_clean/balance_car_final_clean.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 0000f2f5
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00020000  00011fb8  0000e048  R  X
+  SRAM                  20200000   00008000  00004663  0000399d  RW X
+  BCR_CONFIG            41c00000   000000ff  00000000  000000ff  R   
+  BSL_CONFIG            41c00100   00000080  00000000  00000080  R   
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00011fb8   00011fb8    r-x
+  00000000    00000000    000000c0   000000c0    r-- .intvecs
+  000000c0    000000c0    0000fda0   0000fda0    r-x .text
+  0000fe60    0000fe60    00002120   00002120    r-- .rodata
+  00011f80    00011f80    00000038   00000038    r-- .cinit
+20200000    20200000    00004463   00000000    rw-
+  20200000    20200000    00004418   00000000    rw- .bss
+  20204418    20204418    0000004b   00000000    rw- .data
+20207e00    20207e00    00000200   00000000    rw-
+  20207e00    20207e00    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    000000c0     
+                  00000000    000000c0     startup_mspm0g350x_ticlang.o (.intvecs)
+
+.text      0    000000c0    0000fda0     
+                  000000c0    00000dac     ball_controller.o (.text.BallController_OnMeasurement)
+                  00000e6c    000009d0     libc.a : _printfi.c.obj (.text:__TI_printfi)
+                  0000183c    000008f8     ball_controller.o (.text.Ball_ControlBSettle)
+                  00002134    0000062c     mode_q3.o (.text.OLED_RenderStatus)
+                  00002760    00000588     ball_controller.o (.text.Ball_ControlQuiet)
+                  00002ce8    0000030c     ball_controller.o (.text.Ball_CenterWindowReady)
+                  00002ff4    000002d8     ball_pid_bank.o (.text.BallPidBank_Update)
+                  000032cc    000002cc     ball_controller.o (.text.Ball_Log)
+                  00003598    000002cc     mode_q3.o (.text.LogDumpService)
+                  00003864    000002ba     oled.o (.text.OLED_VPrintf)
+                  00003b1e    00000288     pid.o (.text.PID_Update)
+                  00003da6    00000002     key.o (.text.Key_Init)
+                  00003da8    0000025c     mode_q3.o (.text.ModeQ3_Loop)
+                  00004004    00000228     ti_msp_dl_config.o (.text.SYSCFG_DL_GPIO_init)
+                  0000422c    00000220     libc.a : _printfi.c.obj (.text._pconv_a)
+                  0000444c    0000020c     mode_q4.o (.text.Ball_Control_Tick)
+                  00004658    000001fc     curve_control_v5.o (.text.CurveControlV5_Step5ms)
+                  00004854    000001f8     mode_q5.o (.text.Ball_Control_Tick)
+                  00004a4c    000001f6     curve_pid.o (.text.Curve_PID_Update)
+                  00004c42    000001f6     pid_q2.o (.text.Q2_PID_Update)
+                  00004e38    000001f0     mode_q4.o (.text.ModeQ4_Tick1ms)
+                  00005028    000001dc     libc.a : _printfi.c.obj (.text._pconv_g)
+                  00005204    000001c4     curve_control_v4.o (.text.CurveControlV4_Step5ms)
+                  000053c8    000001c4     curve_control_q2.o (.text.Q2CurveControl_Step5ms)
+                  0000558c    000001ac     mode_q5.o (.text.ModeQ5_Tick1ms)
+                  00005738    000001ac     oled.o (.text.OLED_PrintNum)
+                  000058e4    00000194     ball_estimator.o (.text.BallEstimator_Add)
+                  00005a78    00000192     libclang_rt.builtins.a : adddf3.S.obj (.text.adddf3_subdf3)
+                  00005c0a    00000002                            : aeabi_div0.c.obj (.text.__aeabi_idiv0)
+                  00005c0c    00000190     ball_controller.o (.text.Ball_UpdateQuietObserver)
+                  00005d9c    00000174     oled.o (.text.OLED_PrintFloat)
+                  00005f10    0000016c     ball_controller.o (.text.Ball_FinishQuietObserve)
+                  0000607c    0000016a     curve_control_v4.o (.text.CurveControlV4_RunLinePid)
+                  000061e6    0000016a     curve_control_v5.o (.text.CurveControlV5_RunLinePid)
+                  00006350    0000016a     curve_control_q2.o (.text.Q2CurveControl_RunLinePid)
+                  000064ba    00000002     libclang_rt.builtins.a : aeabi_div0.c.obj (.text.__aeabi_ldiv0)
+                  000064bc    00000160     ball_fast_estimator.o (.text.BallFastEstimator_Add)
+                  0000661c    0000015c     mode_q2.o (.text.ModeQ2_Tick1ms)
+                  00006778    00000158     oled.o (.text.OLED_ShowChar)
+                  000068d0    00000154     ball_quiet_observer.o (.text.BallQuietObserver_Add)
+                  00006a24    00000150     ball_estimator.o (.text.BallEstimator_LeastSquaresVelocity)
+                  00006b74    00000150     mode_q4.o (.text.ModeQ4_UpdatePidGains)
+                  00006cc4    00000150     mode_q5.o (.text.ModeQ5_UpdatePidGains)
+                  00006e14    0000014c     ball_pid_bank.o (.text.BallPid_AssignWeights)
+                  00006f60    00000148     ball_fast_estimator.o (.text.BallFast_LeastSquaresVelocity)
+                  000070a8    00000144     ball_controller.o (.text.Ball_ResetMotionHistory)
+                  000071ec    00000140     ball_controller.o (.text.Ball_StartTaskFromReady)
+                  0000732c    0000013c     ball_controller.o (.text.Ball_ControlBApproach)
+                  00007468    0000013c     libc.a : _printfi.c.obj (.text.fcvt)
+                  000075a4    00000120            : _printfi.c.obj (.text._pconv_e)
+                  000076c4    0000011c     ball_controller.o (.text.Ball_RecordServoTransition)
+                  000077e0    0000011c     ball_controller.o (.text.Ball_UpdateBGuardMetrics)
+                  000078fc    00000114     ball_controller.o (.text.Ball_CompleteAtB)
+                  00007a10    00000114     ball_controller.o (.text.Ball_EnterDriveB)
+                  00007b24    0000010c     libclang_rt.builtins.a : divdf3.S.obj (.text.__divdf3)
+                  00007c30    00000104     ball_controller.o (.text.Ball_QuietFlags)
+                  00007d34    00000104     driverlib.a : dl_timer.o (.text.DL_Timer_initFourCCPWMMode)
+                  00007e38    00000104     mode_q3.o (.text.ParseSignedDx)
+                  00007f3c    00000102     curve_control_v4.o (.text.CurveControlV4_PushSample1ms)
+                  0000803e    00000102     curve_control_v5.o (.text.CurveControlV5_PushSample1ms)
+                  00008140    00000102     curve_control_q2.o (.text.Q2CurveControl_PushSample1ms)
+                  00008242    00000002     --HOLE-- [fill = 0]
+                  00008244    000000fc     ball_controller.o (.text.Ball_ResetQuietRuntime)
+                  00008340    000000fc     driverlib.a : dl_timer.o (.text.DL_Timer_initTimerMode)
+                  0000843c    000000fc     mode_q5.o (.text.ModeQ5_Init)
+                  00008538    000000fc     mode_q5.o (.text.ModeQ5_RenderOled)
+                  00008634    000000f8     ball_controller.o (.text.Ball_StartQuietPulse)
+                  0000872c    000000f8     oled.o (.text.OLED_Init)
+                  00008824    000000f4     mode_q4.o (.text.ModeQ4_RenderOled)
+                  00008918    000000f0     mode_q4.o (.text.ModeQ4_ParseDx)
+                  00008a08    000000f0     mode_q5.o (.text.ModeQ5_ParseDx)
+                  00008af8    000000f0     uart.o (.text.UART0_IRQHandler)
+                  00008be8    000000f0     uart.o (.text.UART_TakeLatestPacket)
+                  00008cd8    000000e8     ti_msp_dl_config.o (.text.SYSCFG_DL_SYSCTL_SYSPLL_init)
+                  00008dc0    000000e4     ball_controller.o (.text.BallController_StateShort)
+                  00008ea4    000000e4     mode_q2.o (.text.ModeQ2_RenderOled)
+                  00008f88    000000e4     libclang_rt.builtins.a : muldf3.S.obj (.text.__muldf3)
+                  0000906c    000000e0     ball_controller.o (.text.Ball_ExitQuiet)
+                  0000914c    000000e0     ball_controller.o (.text.Ball_HandleATurn)
+                  0000922c    000000e0     mode_q4.o (.text.ModeQ4_Init)
+                  0000930c    000000dc     ball_controller.o (.text.Ball_UpdateSettleFastSign)
+                  000093e8    000000dc     driverlib.a : dl_sysctl_mspm0g1x0x_g3x0x.o (.text.DL_SYSCTL_configSYSPLL)
+                  000094c4    000000d8     ball_controller.o (.text.Ball_EnterQuiet)
+                  0000959c    000000d8     ball_controller.o (.text.Ball_UpdateBudgetFlags)
+                  00009674    000000d8     libc.a : s_scalbn.c.obj (.text.scalbn)
+                  0000974c    000000d8     libclang_rt.builtins.a : addsf3.S.obj (.text)
+                  00009824    000000d4     main.o (.text.main)
+                  000098f8    000000d0     ball_controller.o (.text.Ball_CenterWindowPush)
+                  000099c8    000000c8     main.o (.text.App_HandleKeys)
+                  00009a90    000000c8     ball_controller.o (.text.BallController_OnVisionFault)
+                  00009b58    000000c8     ball_controller.o (.text.Ball_UpdateBDiagnostics)
+                  00009c20    000000c4     mode_q3.o (.text.ModeQ3_Init)
+                  00009ce4    000000c0     encoder.o (.text.GROUP1_IRQHandler)
+                  00009da4    000000bc     uart.o (.text.UART_PublishRxPacket)
+                  00009e60    000000b4     curve_control_v4.o (.text.CurveControlV4_SelectBasePwm)
+                  00009f14    000000b4     curve_control_v5.o (.text.CurveControlV5_SelectBasePwm)
+                  00009fc8    000000b4     curve_control_q2.o (.text.Q2CurveControl_SelectBasePwm)
+                  0000a07c    000000a4     ball_controller.o (.text.BallController_RequestAbort)
+                  0000a120    000000a4     ball_controller.o (.text.BallController_SettleModeShort)
+                  0000a1c4    000000a4     ball_controller.o (.text.Ball_UpdateSettleMotion)
+                  0000a268    000000a4     curve_control_v5.o (.text.CurveControlV5_Start)
+                  0000a30c    000000a4     oled.o (.text.OLED_RefreshStep)
+                  0000a3b0    000000a4     main.o (.text.TIMA0_IRQHandler)
+                  0000a454    000000a2     libclang_rt.builtins.a : udivmoddi4.S.obj (.text)
+                  0000a4f6    000000a0     curve_control_v4.o (.text.CurveControlV4_Start)
+                  0000a596    000000a0     curve_control_q2.o (.text.Q2CurveControl_Start)
+                  0000a636    00000002     --HOLE-- [fill = 0]
+                  0000a638    000000a0     ti_msp_dl_config.o (.text.SYSCFG_DL_initPower)
+                  0000a6d8    000000a0     libc.a : e_sqrtf.c.obj (.text.sqrtf)
+                  0000a778    0000009c     ball_controller.o (.text.Ball_StartSettlePulse)
+                  0000a814    00000098     main.o (.text.App_RenderMenu)
+                  0000a8ac    00000098     ball_controller.o (.text.BallController_RequestStart)
+                  0000a944    00000098     ball_controller.o (.text.Ball_GetBrakeReason)
+                  0000a9dc    00000098     curve_control_v4.o (.text.CurveControlV4_ErrorMmQ8)
+                  0000aa74    00000098     curve_control_v5.o (.text.CurveControlV5_ErrorMmQ8)
+                  0000ab0c    00000098     curve_control_q2.o (.text.Q2CurveControl_ErrorMmQ8)
+                  0000aba4    00000096     curve_control_v5.o (.text.CurveControlV5_Init)
+                  0000ac3a    00000094     ball_quiet_observer.o (.text.BallQuiet_Sort)
+                  0000acce    00000002     --HOLE-- [fill = 0]
+                  0000acd0    00000094     ball_controller.o (.text.Ball_QuietOutwardPrediction)
+                  0000ad64    00000094     ball_controller.o (.text.Ball_ResetPulse)
+                  0000adf8    00000094     mode_q5.o (.text.ModeQ5_Stop)
+                  0000ae8c    00000094     mode_q3.o (.text.SyncTimerMirrors)
+                  0000af20    00000092     curve_control_v4.o (.text.CurveControlV4_Init)
+                  0000afb2    00000092     oled.o (.text.OLED_PrintChar)
+                  0000b044    00000092     curve_control_q2.o (.text.Q2CurveControl_Init)
+                  0000b0d6    00000002     --HOLE-- [fill = 0]
+                  0000b0d8    00000090     main.o (.text.App_StartSelected)
+                  0000b168    00000090     ball_controller.o (.text.Ball_ApplyVelocityBrake)
+                  0000b1f8    00000090     curve_control_v4.o (.text.CurveControlV4_FilteredMask)
+                  0000b288    00000090     curve_control_v5.o (.text.CurveControlV5_FilteredMask)
+                  0000b318    00000090     curve_control_q2.o (.text.Q2CurveControl_FilteredMask)
+                  0000b3a8    0000008c     ball_controller.o (.text.Ball_GetApproachReason)
+                  0000b434    0000008c     ti_msp_dl_config.o (.text.SYSCFG_DL_MOTOR_init)
+                  0000b4c0    0000008c     ti_msp_dl_config.o (.text.SYSCFG_DL_SERVO_init)
+                  0000b54c    0000008c     libclang_rt.builtins.a : mulsf3.S.obj (.text.__mulsf3)
+                  0000b5d8    00000088     ball_controller.o (.text.Ball_AReverseFallbackReady)
+                  0000b660    00000088     curve_control_v4.o (.text.CurveControlV4_ResetDynamicControl)
+                  0000b6e8    00000088     curve_control_v5.o (.text.CurveControlV5_ResetDynamicControl)
+                  0000b770    00000088     curve_control_v5.o (.text.CurveControlV5_StateName)
+                  0000b7f8    00000088     curve_control_q2.o (.text.Q2CurveControl_ResetDynamicControl)
+                  0000b880    00000084     ball_controller.o (.text.BallController_RequestTimeout)
+                  0000b904    00000084     ball_controller.o (.text.BallController_ResultShort)
+                  0000b988    00000084     ball_controller.o (.text.Ball_QuietDirectionStable)
+                  0000ba0c    00000084     ball_controller.o (.text.Ball_RoundPidOutput2)
+                  0000ba90    00000084     mode_q4.o (.text.ModeQ4_Stop)
+                  0000bb14    00000084     ti_msp_dl_config.o (.text.__NVIC_SetPriority)
+                  0000bb98    00000082     libclang_rt.builtins.a : divsf3.S.obj (.text.__divsf3)
+                  0000bc1a    00000002     --HOLE-- [fill = 0]
+                  0000bc1c    00000080     ball_controller.o (.text.BallController_GetLog)
+                  0000bc9c    00000080     ball_controller.o (.text.Ball_RoundInt16)
+                  0000bd1c    00000080     motor.o (.text.Motor1_SetSpeed)
+                  0000bd9c    00000080     motor.o (.text.Motor2_SetSpeed)
+                  0000be1c    0000007c     curve_control_v4.o (.text.CurveControlV4_Slew)
+                  0000be98    0000007c     curve_control_v5.o (.text.CurveControlV5_Slew)
+                  0000bf14    0000007c     mode_q5.o (.text.ModeQ5_SetTargetCm)
+                  0000bf90    0000007c     curve_control_q2.o (.text.Q2CurveControl_Slew)
+                  0000c00c    0000007c     libc.a : copy_decompress_lzss.c.obj (.text:decompress:lzss)
+                  0000c088    00000078     curve_control_v4.o (.text.CurveControlV4_StateName)
+                  0000c100    00000078     curve_control_q2.o (.text.Q2CurveControl_StateName)
+                  0000c178    00000074     main.o (.text.App_StopActive)
+                  0000c1ec    00000074     ball_controller.o (.text.Ball_EnterBrakeB)
+                  0000c260    00000074     key.o (.text.Key_GetState)
+                  0000c2d4    00000074     oled.o (.text.OLED_WR_Byte)
+                  0000c348    00000074     ti_msp_dl_config.o (.text.SYSCFG_DL_SYSCTL_init)
+                  0000c3bc    00000074     uart.o (.text.UART_ResetRxMailbox)
+                  0000c430    00000074     libclang_rt.builtins.a : comparedf2.c.obj (.text.__gedf2)
+                  0000c4a4    00000070     ball_controller.o (.text.BallController_Init)
+                  0000c514    00000070     mode_q2.o (.text.ModeQ2_Init)
+                  0000c584    00000070     mode_q3.o (.text.ModeQ3_Tick1ms)
+                  0000c5f4    00000070     mode_q4.o (.text.ModeQ4_StartupProgressFade)
+                  0000c664    00000070     mode_q5.o (.text.ModeQ5_StartupProgressFade)
+                  0000c6d4    0000006c     mode_q5.o (.text.ModeQ5_SetTargetStep)
+                  0000c740    0000006c     servo.o (.text.Servo_SetAngle1)
+                  0000c7ac    0000006a     ball_controller.o (.text.BallController_TaskTimerActive)
+                  0000c816    0000006a     ball_pid_bank.o (.text.BallPidBank_ResetDynamics)
+                  0000c880    00000068     libclang_rt.builtins.a : comparedf2.c.obj (.text.__ledf2)
+                  0000c8e8    00000066     ball_ui.o (.text.BallUiThrottle_TakeRefresh)
+                  0000c94e    00000066     libc.a : _printfi.c.obj (.text._mcpy)
+                  0000c9b4    00000064     main.o (.text.App_ModeLabel)
+                  0000ca18    00000064     driverlib.a : dl_sysctl_mspm0g1x0x_g3x0x.o (.text.DL_SYSCTL_setHFCLKSourceHFXTParams)
+                  0000ca7c    00000064     oled.o (.text.OLED_ClearPoint)
+                  0000cae0    00000064     huidu.o (.text.huidu_get_value)
+                  0000cb44    00000062     libclang_rt.builtins.a : aeabi_dcmp.S.obj (.text.__aeabi_dcmp)
+                  0000cba6    00000002     --HOLE-- [fill = 0]
+                  0000cba8    00000062                            : aeabi_fcmp.S.obj (.text.__aeabi_fcmp)
+                  0000cc0a    00000002     --HOLE-- [fill = 0]
+                  0000cc0c    00000060     key.o (.text.Key_GetNum)
+                  0000cc6c    00000060     key.o (.text.Key_Tick)
+                  0000cccc    00000060     ti_msp_dl_config.o (.text.SYSCFG_DL_MPU6050_init)
+                  0000cd2c    00000060     ti_msp_dl_config.o (.text.SYSCFG_DL_OLED_init)
+                  0000cd8c    00000060     mode_q3.o (.text.Servo_ApplySafe)
+                  0000cdec    0000005e     driverlib.a : dl_i2c.o (.text.DL_I2C_fillControllerTXFIFO)
+                  0000ce4a    00000002     --HOLE-- [fill = 0]
+                  0000ce4c    0000005c     ball_controller.o (.text.BallController_ApproachReasonShort)
+                  0000cea8    0000005c     ball_controller.o (.text.BallController_BrakeReasonShort)
+                  0000cf04    0000005c     ball_controller.o (.text.Ball_EnterBApproach)
+                  0000cf60    0000005c     curve_control_v5.o (.text.CurveControlV5_StopImmediate)
+                  0000cfbc    0000005c     encoder.o (.text.Encoder_Init)
+                  0000d018    0000005c     mode_q3.o (.text.ModeQ3_Stop)
+                  0000d074    0000005c     libc.a : s_frexp.c.obj (.text.frexp)
+                  0000d0d0    00000058     ball_controller.o (.text.Ball_ClearLog)
+                  0000d128    00000058     ball_controller.o (.text.Ball_LatchFirstBOvershoot)
+                  0000d180    00000058     ball_controller.o (.text.Ball_RoundUInt16)
+                  0000d1d8    00000058     curve_control_v4.o (.text.CurveControlV4_StopImmediate)
+                  0000d230    00000058     mode_q3.o (.text.DisableUnusedQ3Interrupts)
+                  0000d288    00000058     mode_q3.o (.text.LogDumpEligible)
+                  0000d2e0    00000058     oled.o (.text.OLED_ClearBuffer)
+                  0000d338    00000058     curve_control_q2.o (.text.Q2CurveControl_StopImmediate)
+                  0000d390    00000058     libc.a : _ltoa.c.obj (.text.__TI_ltoa)
+                  0000d3e8    00000058            : _printfi.c.obj (.text._pconv_f)
+                  0000d440    00000056     libclang_rt.builtins.a : aeabi_idivmod.S.obj (.text.__aeabi_idivmod)
+                  0000d496    00000052     libc.a : _printfi.c.obj (.text._ecpy)
+                  0000d4e8    00000050     ball_controller.o (.text.Ball_BSide)
+                  0000d538    00000050     ball_controller.o (.text.Ball_DampingMagnitude)
+                  0000d588    00000050     ball_controller.o (.text.Ball_UpdateAPeak)
+                  0000d5d8    00000050     ti_msp_dl_config.o (.text.DL_GPIO_initPeripheralInputFunctionFeatures)
+                  0000d628    00000050     oled.o (.text.DL_I2C_startControllerTransfer)
+                  0000d678    00000050     mode_q5.o (.text.ModeQ5_PublishTelemetry)
+                  0000d6c8    00000050     ti_msp_dl_config.o (.text.SysTick_Config)
+                  0000d718    00000050     huidu.o (.text.huidu_get_mask)
+                  0000d768    0000004e     curve_control_v4.o (.text.CurveControlV4_Clamp)
+                  0000d7b6    0000004e     curve_control_v5.o (.text.CurveControlV5_Clamp)
+                  0000d804    0000004e     curve_control_q2.o (.text.Q2CurveControl_Clamp)
+                  0000d852    00000002     --HOLE-- [fill = 0]
+                  0000d854    0000004c     main.o (.text.App_RunLoop)
+                  0000d8a0    0000004c     ball_controller.o (.text.Ball_EnterTimeout)
+                  0000d8ec    0000004c     ti_msp_dl_config.o (.text.DL_GPIO_initDigitalInputFeatures)
+                  0000d938    0000004c     ti_msp_dl_config.o (.text.DL_UART_setBaudRateDivisor)
+                  0000d984    0000004c     mode_q2.o (.text.ModeQ2_Stop)
+                  0000d9d0    0000004a     ball_controller.o (.text.Ball_PredictedTargetCrossing)
+                  0000da1a    0000004a     ball_controller.o (.text.Ball_QuietPulseRearmed)
+                  0000da64    0000004a     curve_control_v4.o (.text.CurveControlV4_StopForFinish)
+                  0000daae    0000004a     curve_control_v5.o (.text.CurveControlV5_StopForFinish)
+                  0000daf8    0000004a     curve_control_q2.o (.text.Q2CurveControl_StopForFinish)
+                  0000db42    00000002     --HOLE-- [fill = 0]
+                  0000db44    0000004a     libclang_rt.builtins.a : fixdfsi.S.obj (.text.__fixdfsi)
+                  0000db8e    00000002     --HOLE-- [fill = 0]
+                  0000db90    00000048     ball_controller.o (.text.Ball_OutputApproachCommand)
+                  0000dbd8    00000048     ball_controller.o (.text.Ball_StartQuietObserve)
+                  0000dc20    00000048     curve_control_v5.o (.text.CurveControlV5_IsRunState)
+                  0000dc68    00000048     driverlib.a : dl_uart.o (.text.DL_UART_init)
+                  0000dcb0    00000048     mode_q4.o (.text.ModeQ4_Start)
+                  0000dcf8    00000048     mode_q5.o (.text.ModeQ5_IsRunState)
+                  0000dd40    00000048     mode_q5.o (.text.ModeQ5_Start)
+                  0000dd88    00000048     motor.o (.text.Motor_ClampSpeed)
+                  0000ddd0    00000048     oled.o (.text.OLED_DisplayTurn)
+                  0000de18    00000048     oled.o (.text.OLED_DrawPoint)
+                  0000de60    00000048     mode_q3.o (.text.Round100)
+                  0000dea8    00000048     ti_msp_dl_config.o (.text.SYSCFG_DL_Serial_init)
+                  0000def0    00000046     curve_control_v5.o (.text.CurveControlV5_GetOutput)
+                  0000df36    00000002     --HOLE-- [fill = 0]
+                  0000df38    00000044     ball_controller.o (.text.Ball_DynamicMagnitude)
+                  0000df7c    00000044     ball_controller.o (.text.Ball_SetServoAutomaticOffset)
+                  0000dfc0    00000044     driverlib.a : dl_sysctl_mspm0g1x0x_g3x0x.o (.text.DL_SYSCTL_switchMCLKfromSYSOSCtoHSCLK)
+                  0000e004    00000044     mode_q2.o (.text.ModeQ2_PublishTelemetry)
+                  0000e048    00000044     mode_q2.o (.text.ModeQ2_ReadTelemetry)
+                  0000e08c    00000044     mode_q4.o (.text.ModeQ4_PublishTelemetry)
+                  0000e0d0    00000044     mode_q4.o (.text.ModeQ4_ReadTelemetry)
+                  0000e114    00000044     mode_q5.o (.text.ModeQ5_ReadTelemetry)
+                  0000e158    00000044     ti_msp_dl_config.o (.text.SYSCFG_DL_init)
+                  0000e19c    00000044     mode_q3.o (.text.Servo_HardClamp)
+                  0000e1e0    00000042     curve_control_v4.o (.text.CurveControlV4_GetOutput)
+                  0000e222    00000042     curve_control_q2.o (.text.Q2CurveControl_GetOutput)
+                  0000e264    00000042     mode_q3.o (.text.UART_TakeDxPacket)
+                  0000e2a6    00000002     --HOLE-- [fill = 0]
+                  0000e2a8    00000042     libclang_rt.builtins.a : fixunsdfsi.S.obj (.text.__fixunsdfsi)
+                  0000e2ea    00000002     --HOLE-- [fill = 0]
+                  0000e2ec    00000040     curve_control_v4.o (.text.CurveControlV4_SelectApproachStage)
+                  0000e32c    00000040     curve_control_v5.o (.text.CurveControlV5_SelectApproachStage)
+                  0000e36c    00000040     mode_q3.o (.text.ModeQ3_Start)
+                  0000e3ac    00000040     curve_control_q2.o (.text.Q2CurveControl_SelectApproachStage)
+                  0000e3ec    00000040     libclang_rt.builtins.a : aeabi_uidivmod.S.obj (.text.__aeabi_uidivmod)
+                  0000e42c    00000040     libc.a : atoi.c.obj (.text.atoi)
+                  0000e46c    0000003e     ball_estimator.o (.text.BallEstimator_Clamp)
+                  0000e4aa    0000003e     ball_fast_estimator.o (.text.BallFast_Clamp)
+                  0000e4e8    0000003e     ball_pid_bank.o (.text.BallPid_Clamp)
+                  0000e526    0000003e     ball_controller.o (.text.Ball_Clamp)
+                  0000e564    0000003c     ball_controller.o (.text.Ball_SetServoPhaseOffset)
+                  0000e5a0    0000003c     ball_controller.o (.text.Ball_StartAEarlyPulse)
+                  0000e5dc    0000003c     ti_msp_dl_config.o (.text.DL_Timer_setCounterControl)
+                  0000e618    0000003c     mode_q2.o (.text.ModeQ2_Loop)
+                  0000e654    0000003c     mode_q4.o (.text.ModeQ4_Loop)
+                  0000e690    0000003c     mode_q5.o (.text.ModeQ5_Loop)
+                  0000e6cc    0000003c     libclang_rt.builtins.a : floatsisf.S.obj (.text.__floatsisf)
+                  0000e708    0000003c                            : comparesf2.S.obj (.text.__gtsf2)
+                  0000e744    0000003c     libc.a : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit)
+                  0000e780    0000003a     ball_controller.o (.text.Ball_IsTerminalBControlState)
+                  0000e7ba    0000003a     curve_control_v4.o (.text.CurveControlV4_IsRunState)
+                  0000e7f4    0000003a     mode_q2.o (.text.ModeQ2_IsRunState)
+                  0000e82e    0000003a     mode_q4.o (.text.ModeQ4_IsRunState)
+                  0000e868    0000003a     curve_control_q2.o (.text.Q2CurveControl_IsRunState)
+                  0000e8a2    00000002     --HOLE-- [fill = 0]
+                  0000e8a4    0000003a     libclang_rt.builtins.a : comparesf2.S.obj (.text.__eqsf2)
+                  0000e8de    00000002     --HOLE-- [fill = 0]
+                  0000e8e0    0000003a                            : muldsi3.S.obj (.text.__muldsi3)
+                  0000e91a    00000038     ball_controller.o (.text.Ball_ResetCenterWindow)
+                  0000e952    00000038     curve_control_v4.o (.text.CurveControlV4_PopCount)
+                  0000e98a    00000038     curve_control_v5.o (.text.CurveControlV5_PopCount)
+                  0000e9c2    00000038     curve_control_q2.o (.text.Q2CurveControl_PopCount)
+                  0000e9fa    00000038     uart.o (.text.UART_SendString)
+                  0000ea32    00000002     --HOLE-- [fill = 0]
+                  0000ea34    00000038     libclang_rt.builtins.a : fixsfsi.S.obj (.text.__fixsfsi)
+                  0000ea6c    00000034     ball_controller.o (.text.BallController_IsActive)
+                  0000eaa0    00000034     ball_controller.o (.text.BallController_VisionWatchActive)
+                  0000ead4    00000034     mode_q4.o (.text.ModeQ4_UpdateDerivativeAlpha)
+                  0000eb08    00000034     mode_q5.o (.text.ModeQ5_UpdateDerivativeAlpha)
+                  0000eb3c    00000034     motor.o (.text.Motor1_Brake)
+                  0000eb70    00000034     motor.o (.text.Motor2_Brake)
+                  0000eba4    00000034     oled.o (.text.OLED_ColorTurn)
+                  0000ebd8    00000034     ti_msp_dl_config.o (.text.SYSCFG_DL_TIMER_PID_init)
+                  0000ec0c    00000034     mode_q3.o (.text.__NVIC_DisableIRQ)
+                  0000ec40    00000034     uart.o (.text.__NVIC_DisableIRQ)
+                  0000ec74    00000034     huidu.o (.text.get_gpio_state)
+                  0000eca8    00000032     ball_pid_bank.o (.text.BallPidBank_ResetIntegrals)
+                  0000ecda    00000002     --HOLE-- [fill = 0]
+                  0000ecdc    00000032     libclang_rt.builtins.a : fixunssfsi.S.obj (.text.__fixunssfsi)
+                  0000ed0e    00000030     ball_controller.o (.text.BallController_DataAgeMs)
+                  0000ed3e    00000030     ball_fast_estimator.o (.text.BallFastEstimator_Seed)
+                  0000ed6e    00000002     --HOLE-- [fill = 0]
+                  0000ed70    00000030     ball_controller.o (.text.Ball_RoundWeight255)
+                  0000eda0    00000030     driverlib.a : dl_uart.o (.text.DL_UART_transmitDataBlocking)
+                  0000edd0    00000030     mode_q3.o (.text.LogDumpStop)
+                  0000ee00    00000030     oled.o (.text.OLED_DrawPrintf)
+                  0000ee30    00000030     uart.o (.text.UART_Printf)
+                  0000ee60    00000030     libc.a : _printfi.c.obj (.text._fcpy)
+                  0000ee90    0000002e     curve_control_v4.o (.text.CurveControlV4_Abs16)
+                  0000eebe    0000002e     curve_control_v5.o (.text.CurveControlV5_Abs16)
+                  0000eeec    0000002e     curve_pid.o (.text.Curve_PID_Reset)
+                  0000ef1a    0000002e     curve_control_q2.o (.text.Q2CurveControl_Abs16)
+                  0000ef48    0000002e     pid_q2.o (.text.Q2_PID_Reset)
+                  0000ef76    0000002c     ball_pid_bank.o (.text.BallPid_Abs)
+                  0000efa2    0000002c     ball_controller.o (.text.Ball_Abs)
+                  0000efce    0000002c     mode_q4.o (.text.ModeQ4_AbsF)
+                  0000effa    0000002c     mode_q5.o (.text.ModeQ5_AbsF)
+                  0000f026    00000002     --HOLE-- [fill = 0]
+                  0000f028    0000002c     encoder.o (.text.__NVIC_ClearPendingIRQ)
+                  0000f054    0000002c     mode_q3.o (.text.__NVIC_ClearPendingIRQ)
+                  0000f080    0000002c     encoder.o (.text.__NVIC_EnableIRQ)
+                  0000f0ac    0000002c     main.o (.text.__NVIC_EnableIRQ)
+                  0000f0d8    0000002c     mode_q3.o (.text.__NVIC_EnableIRQ)
+                  0000f104    0000002c     uart.o (.text.__NVIC_EnableIRQ)
+                  0000f130    0000002c     libclang_rt.builtins.a : floatsidf.S.obj (.text.__floatsidf)
+                  0000f15c    0000002c     libc.a : vsprintf.c.obj (.text.vsprintf)
+                  0000f188    0000002a     ball_controller.o (.text.Ball_TaskElapsed)
+                  0000f1b2    00000002     --HOLE-- [fill = 0]
+                  0000f1b4    00000028     mode_q3.o (.text.ClampAge16)
+                  0000f1dc    00000028     mode_q3.o (.text.ClampDisplayTime)
+                  0000f204    00000028     oled.o (.text.DL_Common_updateReg)
+                  0000f22c    00000028     ti_msp_dl_config.o (.text.DL_Common_updateReg)
+                  0000f254    00000028     ti_msp_dl_config.o (.text.DL_I2C_setControllerRXFIFOThreshold)
+                  0000f27c    00000028     ti_msp_dl_config.o (.text.DL_I2C_setControllerTXFIFOThreshold)
+                  0000f2a4    00000028     encoder.o (.text.Encoder_Reset)
+                  0000f2cc    00000028     libclang_rt.builtins.a : floatunsisf.S.obj (.text.__floatunsisf)
+                  0000f2f4    00000028     libc.a : boot_cortex_m.c.obj (.text:_c_int00_noargs)
+                  0000f31c    00000026     ti_msp_dl_config.o (.text.DL_I2C_setAnalogGlitchFilterPulseWidth)
+                  0000f342    00000026     driverlib.a : dl_i2c.o (.text.DL_I2C_setClockConfig)
+                  0000f368    00000024     ball_ui.o (.text.BallUiThrottle_Init)
+                  0000f38c    00000024     ball_controller.o (.text.Ball_SetServoCenter)
+                  0000f3b0    00000024     ti_msp_dl_config.o (.text.DL_I2C_setDigitalGlitchFilterPulseWidth)
+                  0000f3d4    00000024     encoder.o (.text.Encoder_ReadDelta1)
+                  0000f3f8    00000024     encoder.o (.text.Encoder_ReadDelta2)
+                  0000f41c    00000024     libclang_rt.builtins.a : floatunsidf.S.obj (.text.__floatunsidf)
+                  0000f440    00000024                            : muldi3.S.obj (.text.__muldi3)
+                  0000f464    00000022     ball_controller.o (.text.Ball_QuietMovingAway)
+                  0000f486    00000022     curve_control_v5.o (.text.CurveControlV5_EnterStopDelay)
+                  0000f4a8    00000022     libc.a : memccpy.c.obj (.text.memccpy)
+                  0000f4ca    00000002     --HOLE-- [fill = 0]
+                  0000f4cc    00000020     ti_msp_dl_config.o (.text.DL_GPIO_initPeripheralInputFunction)
+                  0000f4ec    00000020     ti_msp_dl_config.o (.text.DL_SYSCTL_setFlashWaitState)
+                  0000f50c    00000020     oled.o (.text.OLED_RefreshBusy)
+                  0000f52c    0000001e     ti_msp_dl_config.o (.text.DL_UART_setOversampling)
+                  0000f54a    00000002     --HOLE-- [fill = 0]
+                  0000f54c    0000001e     libclang_rt.builtins.a : ashldi3.S.obj (.text.__ashldi3)
+                  0000f56a    00000002     --HOLE-- [fill = 0]
+                  0000f56c    0000001c     ball_controller.o (.text.BallController_SetLogFrozen)
+                  0000f588    0000001c     ball_controller.o (.text.Ball_HardClampServo)
+                  0000f5a4    0000001c     encoder.o (.text.DL_GPIO_clearInterruptStatus)
+                  0000f5c0    0000001c     ti_msp_dl_config.o (.text.DL_GPIO_clearInterruptStatus)
+                  0000f5dc    0000001c     mode_q3.o (.text.DL_GPIO_disableInterrupt)
+                  0000f5f8    0000001c     ti_msp_dl_config.o (.text.DL_GPIO_enableHiZ)
+                  0000f614    0000001c     encoder.o (.text.DL_GPIO_enableInterrupt)
+                  0000f630    0000001c     ti_msp_dl_config.o (.text.DL_GPIO_enableInterrupt)
+                  0000f64c    0000001c     ti_msp_dl_config.o (.text.DL_GPIO_initPeripheralOutputFunction)
+                  0000f668    0000001c     driverlib.a : dl_sysctl_mspm0g1x0x_g3x0x.o (.text.DL_SYSCTL_configFCC)
+                  0000f684    0000001c     ti_msp_dl_config.o (.text.DL_SYSCTL_setFCCPeriods)
+                  0000f6a0    0000001c     ti_msp_dl_config.o (.text.DL_SYSCTL_setSYSOSCFreq)
+                  0000f6bc    0000001c     ti_msp_dl_config.o (.text.DL_SYSCTL_setULPCLKDivider)
+                  0000f6d8    0000001c     ti_msp_dl_config.o (.text.DL_Timer_enableInterrupt)
+                  0000f6f4    0000001c     driverlib.a : dl_timer.o (.text.DL_Timer_setCaptCompUpdateMethod)
+                  0000f710    0000001c                 : dl_timer.o (.text.DL_Timer_setClockConfig)
+                  0000f72c    0000001c     ti_msp_dl_config.o (.text.DL_UART_enableInterrupt)
+                  0000f748    0000001c     uart.o (.text.UART_SendByte)
+                  0000f764    0000001c     delay.o (.text.delay_ms)
+                  0000f780    0000001a     oled.o (.text.OLED_Refresh)
+                  0000f79a    00000018     curve_control_v4.o (.text.CurveControlV4_IsFinishCandidate)
+                  0000f7b2    00000018     curve_control_v5.o (.text.CurveControlV5_IsFinishCandidate)
+                  0000f7ca    00000002     --HOLE-- [fill = 0]
+                  0000f7cc    00000018     ti_msp_dl_config.o (.text.DL_GPIO_enableOutput)
+                  0000f7e4    00000018     ti_msp_dl_config.o (.text.DL_GPIO_enablePower)
+                  0000f7fc    00000018     ti_msp_dl_config.o (.text.DL_GPIO_initDigitalOutput)
+                  0000f814    00000018     ti_msp_dl_config.o (.text.DL_GPIO_initPeripheralAnalogFunction)
+                  0000f82c    00000018     ti_msp_dl_config.o (.text.DL_GPIO_reset)
+                  0000f844    00000018     motor.o (.text.DL_GPIO_setPins)
+                  0000f85c    00000018     ti_msp_dl_config.o (.text.DL_GPIO_setUpperPinsPolarity)
+                  0000f874    00000018     ti_msp_dl_config.o (.text.DL_I2C_enableAnalogGlitchFilter)
+                  0000f88c    00000018     ti_msp_dl_config.o (.text.DL_I2C_enableController)
+                  0000f8a4    00000018     ti_msp_dl_config.o (.text.DL_I2C_enableControllerClockStretching)
+                  0000f8bc    00000018     ti_msp_dl_config.o (.text.DL_I2C_enablePower)
+                  0000f8d4    00000018     ti_msp_dl_config.o (.text.DL_I2C_reset)
+                  0000f8ec    00000018     ti_msp_dl_config.o (.text.DL_I2C_setTimerPeriod)
+                  0000f904    00000018     ti_msp_dl_config.o (.text.DL_SYSCTL_setBORThreshold)
+                  0000f91c    00000018     ti_msp_dl_config.o (.text.DL_Timer_enablePower)
+                  0000f934    00000018     ti_msp_dl_config.o (.text.DL_Timer_reset)
+                  0000f94c    00000018     driverlib.a : dl_timer.o (.text.DL_Timer_setCaptureCompareOutCtl)
+                  0000f964    00000018     main.o (.text.DL_Timer_startCounter)
+                  0000f97c    00000018     mode_q3.o (.text.DL_Timer_startCounter)
+                  0000f994    00000018     ti_msp_dl_config.o (.text.DL_UART_enablePower)
+                  0000f9ac    00000018     ti_msp_dl_config.o (.text.DL_UART_reset)
+                  0000f9c4    00000018     encoder.o (.text.Encoder_ExitCritical)
+                  0000f9dc    00000018     curve_control_q2.o (.text.Q2CurveControl_IsFinishCandidate)
+                  0000f9f4    00000018     libc.a : vsprintf.c.obj (.text._outs)
+                  0000fa0c    00000016     encoder.o (.text.DL_GPIO_readPins)
+                  0000fa22    00000016     huidu.o (.text.DL_GPIO_readPins)
+                  0000fa38    00000016     key.o (.text.DL_GPIO_readPins)
+                  0000fa4e    00000016     ti_msp_dl_config.o (.text.DL_UART_enable)
+                  0000fa64    00000014     ball_controller.o (.text.BallController_TaskElapsedMs)
+                  0000fa78    00000014     motor.o (.text.DL_GPIO_clearPins)
+                  0000fa8c    00000014     ti_msp_dl_config.o (.text.DL_GPIO_clearPins)
+                  0000faa0    00000014     oled.o (.text.DL_I2C_getControllerStatus)
+                  0000fab4    00000014     ti_msp_dl_config.o (.text.DL_I2C_resetControllerTransfer)
+                  0000fac8    00000014     ti_msp_dl_config.o (.text.DL_SYSCTL_disableSYSPLL)
+                  0000fadc    00000014     ti_msp_dl_config.o (.text.DL_SYSCTL_enableSYSPLL)
+                  0000faf0    00000014     ti_msp_dl_config.o (.text.DL_Timer_enableClock)
+                  0000fb04    00000014     ti_msp_dl_config.o (.text.DL_Timer_setCCPDirection)
+                  0000fb18    00000014     uart.o (.text.DL_UART_receiveData)
+                  0000fb2c    00000014     encoder.o (.text.Encoder_EnterCritical)
+                  0000fb40    00000014     mode_q2.o (.text.ModeQ2_Start)
+                  0000fb54    00000014     mode_q4.o (.text.ModeQ4_StartupStageGain)
+                  0000fb68    00000014     mode_q5.o (.text.ModeQ5_StartupStageGain)
+                  0000fb7c    00000014     libclang_rt.builtins.a : aeabi_uldivmod.S.obj (.text.__aeabi_uldivmod)
+                  0000fb90    00000014     libc.a : _printfi.c.obj (.text.strchr)
+                  0000fba4    00000012     ball_estimator.o (.text.BallEstimator_Reset)
+                  0000fbb6    00000012     ball_fast_estimator.o (.text.BallFastEstimator_Reset)
+                  0000fbc8    00000012     ball_pid_bank.o (.text.BallPidBank_Reset)
+                  0000fbda    00000012     ball_quiet_observer.o (.text.BallQuietObserver_Reset)
+                  0000fbec    00000012     encoder.o (.text.DL_GPIO_getPendingInterrupt)
+                  0000fbfe    00000012     main.o (.text.DL_Timer_getPendingInterrupt)
+                  0000fc10    00000012     uart.o (.text.DL_UART_getPendingInterrupt)
+                  0000fc22    00000012     driverlib.a : dl_uart.o (.text.DL_UART_setClockConfig)
+                  0000fc34    00000012     libc.a : memcpy16.S.obj (.text:TI_memcpy_small)
+                  0000fc46    00000012            : copy_decompress_none.c.obj (.text:decompress:none)
+                  0000fc58    00000010     ball_controller.o (.text.BallController_IsReady)
+                  0000fc68    00000010     ball_estimator.o (.text.BallEstimator_Init)
+                  0000fc78    00000010     ball_fast_estimator.o (.text.BallFastEstimator_Init)
+                  0000fc88    00000010     ball_pid_bank.o (.text.BallPidBank_Init)
+                  0000fc98    00000010     ball_quiet_observer.o (.text.BallQuietObserver_Init)
+                  0000fca8    00000010     ti_msp_dl_config.o (.text.DL_SYSCTL_disableHFXT)
+                  0000fcb8    00000010     ti_msp_dl_config.o (.text.DL_SYSCTL_isFCCDone)
+                  0000fcc8    00000010     ti_msp_dl_config.o (.text.DL_SYSCTL_startFCC)
+                  0000fcd8    00000010     mode_q3.o (.text.DL_SYSTICK_disable)
+                  0000fce8    00000010     mode_q3.o (.text.DL_SYSTICK_disableInterrupt)
+                  0000fcf8    00000010     driverlib.a : dl_timer.o (.text.DL_Timer_setCaptureCompareValue)
+                  0000fd08    00000010     ti_msp_dl_config.o (.text.SYSCFG_DL_SYSTICK_init)
+                  0000fd18    00000010     mpu6050.o (.text.SysTick_Handler)
+                  0000fd28    00000010     libc.a : wcslen.c.obj (.text.wcslen)
+                  0000fd38    00000010            : copy_zero_init.c.obj (.text:decompress:ZI)
+                  0000fd48    0000000e     ball_controller.o (.text.BallController_IsArmed)
+                  0000fd56    0000000e     ball_ui.o (.text.BallUiThrottle_Request)
+                  0000fd64    0000000e     libclang_rt.builtins.a : aeabi_memset.S.obj (.text.__aeabi_memset)
+                  0000fd72    0000000e     libc.a : _printfi.c.obj (.text.strlen)
+                  0000fd80    0000000e            : memset16.S.obj (.text:TI_memset_small)
+                  0000fd8e    00000002     --HOLE-- [fill = 0]
+                  0000fd90    0000000c     ti_msp_dl_config.o (.text.DL_SYSCTL_getClockStatus)
+                  0000fd9c    0000000c     ti_msp_dl_config.o (.text.DL_SYSCTL_readFCC)
+                  0000fda8    0000000c     mode_q5.o (.text.ModeQ5_GetTargetCm)
+                  0000fdb4    0000000c     motor.o (.text.Motor_StopSafe)
+                  0000fdc0    0000000c     oled.o (.text.OLED_Clear)
+                  0000fdcc    0000000c     oled.o (.text.OLED_RefreshBegin)
+                  0000fdd8    0000000c     mode_q3.o (.text.System_Now)
+                  0000fde4    0000000c     libclang_rt.builtins.a : aeabi_memset.S.obj (.text.__aeabi_memclr)
+                  0000fdf0    0000000a     driverlib.a : dl_common.o (.text.DL_Common_delayCycles)
+                  0000fdfa    0000000a     libc.a : _printfi.c.obj (.text.OUTLINED_FUNCTION_0)
+                  0000fe04    00000010     libclang_rt.builtins.a : adddf3.S.obj (.tramp.__aeabi_dsub.1)
+                  0000fe14    0000000a     libc.a : _printfi.c.obj (.text.OUTLINED_FUNCTION_1)
+                  0000fe1e    0000000a            : vsprintf.c.obj (.text._outc)
+                  0000fe28    00000008            : aeabi_portable.c.obj (.text.__aeabi_errno_addr)
+                  0000fe30    00000008     libclang_rt.builtins.a : aeabi_memcpy.S.obj (.text.__aeabi_memcpy)
+                  0000fe38    00000006     libc.a : exit.c.obj (.text:abort)
+                  0000fe3e    00000004     startup_mspm0g350x_ticlang.o (.text.Default_Handler)
+                  0000fe42    00000004     libsysbm.a : hostexit.c.obj (.text.HOSTexit)
+                  0000fe46    00000004     startup_mspm0g350x_ticlang.o (.text.Reset_Handler)
+                  0000fe4a    00000002     --HOLE-- [fill = 0]
+                  0000fe4c    00000010     libc.a : boot_cortex_m.c.obj (.tramp._c_int00_noargs.1)
+                  0000fe5c    00000004            : pre_init.c.obj (.text._system_pre_init)
+
+.cinit     0    00011f80    00000038     
+                  00011f80    0000000f     (.cinit..data.load) [load image, compression = lzss]
+                  00011f8f    00000001     --HOLE-- [fill = 0]
+                  00011f90    0000000c     (__TI_handler_table)
+                  00011f9c    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00011fa4    00000010     (__TI_cinit_table)
+                  00011fb4    00000004     --HOLE-- [fill = 0]
+
+.rodata    0    0000fe60    00002120     
+                  0000fe60    00000d5c     oled.o (.rodata.asc2_2412)
+                  00010bbc    000005f0     oled.o (.rodata.asc2_1608)
+                  000111ac    00000474     oled.o (.rodata.asc2_1206)
+                  00011620    00000126     mode_q3.o (.rodata.str1.7622007341309469238.1)
+                  00011746    0000000a     ti_msp_dl_config.o (.rodata.gSerialConfig)
+                  00011750    00000101     libc.a : aeabi_ctype.S.obj (.rodata:__aeabi_ctype_table_)
+                  00011851    00000003     ti_msp_dl_config.o (.rodata.gMOTORClockConfig)
+                  00011854    00000090     mode_q4.o (.rodata.Ball_PidStages)
+                  000118e4    00000090     mode_q5.o (.rodata.Ball_PidStages)
+                  00011974    00000090     ball_pid_bank.o (.rodata.g_pid_config)
+                  00011a04    00000039     mode_q3.o (.rodata.str1.15442827196693072007.1)
+                  00011a3d    00000038     mode_q3.o (.rodata.str1.985103058009945904.1)
+                  00011a75    00000036     mode_q3.o (.rodata.str1.7466618068220195760.1)
+                  00011aab    00000034     mode_q3.o (.rodata.str1.5655832236428531184.1)
+                  00011adf    00000033     mode_q3.o (.rodata.str1.9767160149648696536.1)
+                  00011b12    0000002e     mode_q3.o (.rodata.str1.6726098927229766436.1)
+                  00011b40    00000028     ti_msp_dl_config.o (.rodata.gSYSPLLConfig)
+                  00011b68    00000020     mode_q3.o (.rodata.str1.4690617819313079184.1)
+                  00011b88    0000001f     mode_q3.o (.rodata.str1.2638539829577379642.1)
+                  00011ba7    0000001c     mode_q3.o (.rodata.str1.5377746228625086409.1)
+                  00011bc3    00000001     --HOLE-- [fill = 0]
+                  00011bc4    00000014     ti_msp_dl_config.o (.rodata.gTIMER_PIDTimerConfig)
+                  00011bd8    00000013     mode_q5.o (.rodata.str1.2979225331797050442.1)
+                  00011beb    00000013     mode_q2.o (.rodata.str1.3591394327813958914.1)
+                  00011bfe    00000013     mode_q4.o (.rodata.str1.7249324879072582404.1)
+                  00011c11    00000012     main.o (.rodata.str1.2846389346932560359.1)
+                  00011c23    00000011     libc.a : _printfi.c.obj (.rodata.str1.10348868589481759720.1)
+                  00011c34    00000011            : _printfi.c.obj (.rodata.str1.15363888844622738466.1)
+                  00011c45    00000010     mode_q3.o (.rodata.str1.7204345060774553448.1)
+                  00011c55    0000000f     mode_q2.o (.rodata.str1.12000245628623682631.1)
+                  00011c64    0000000f     mode_q3.o (.rodata.str1.17494007014278973318.1)
+                  00011c73    0000000f     mode_q3.o (.rodata.str1.5780323668065974028.1)
+                  00011c82    0000000f     mode_q3.o (.rodata.str1.7991337100288050501.1)
+                  00011c91    0000000d     mode_q4.o (.rodata.str1.2191533312964934195.1)
+                  00011c9e    0000000d     mode_q5.o (.rodata.str1.346365449426996999.1)
+                  00011cab    0000000c     mode_q3.o (.rodata.str1.1016257664365906864.1)
+                  00011cb7    0000000c     mode_q3.o (.rodata.str1.10586001630365413017.1)
+                  00011cc3    0000000c     main.o (.rodata.str1.8154729771448623357.1)
+                  00011ccf    0000000c     mode_q3.o (.rodata.str1.8986642548881936660.1)
+                  00011cdb    0000000c     mode_q3.o (.rodata.str1.9754817040246386364.1)
+                  00011ce7    0000000b     mode_q4.o (.rodata.str1.12432554435464107075.1)
+                  00011cf2    0000000b     mode_q3.o (.rodata.str1.562833118309740331.1)
+                  00011cfd    0000000b     mode_q3.o (.rodata.str1.6404613994503893476.1)
+                  00011d08    0000000b     mode_q3.o (.rodata.str1.84321516994772570.1)
+                  00011d13    0000000b     mode_q3.o (.rodata.str1.8717823386187681007.1)
+                  00011d1e    0000000a     mode_q3.o (.rodata.str1.10226908250327022832.1)
+                  00011d28    0000000a     mode_q3.o (.rodata.str1.10942006209448378750.1)
+                  00011d32    0000000a     mode_q2.o (.rodata.str1.11523112357175983184.1)
+                  00011d3c    0000000a     mode_q3.o (.rodata.str1.1220366195143254660.1)
+                  00011d46    0000000a     mode_q3.o (.rodata.str1.12759949497886815100.1)
+                  00011d50    0000000a     mode_q3.o (.rodata.str1.13342177205031794157.1)
+                  00011d5a    0000000a     mode_q5.o (.rodata.str1.16322573096555115777.1)
+                  00011d64    0000000a     main.o (.rodata.str1.17100691992556644108.1)
+                  00011d6e    0000000a     mode_q3.o (.rodata.str1.2929653098642110185.1)
+                  00011d78    0000000a     mode_q3.o (.rodata.str1.7060003207773997425.1)
+                  00011d82    0000000a     mode_q2.o (.rodata.str1.9567273675917310741.1)
+                  00011d8c    00000009     curve_control_v5.o (.rodata.str1.1305222016835215941.1)
+                  00011d95    00000009     curve_control_q2.o (.rodata.str1.13472986062709134243.1)
+                  00011d9e    00000009     curve_control_v5.o (.rodata.str1.13677535125780644284.1)
+                  00011da7    00000009     main.o (.rodata.str1.15159059442110792349.1)
+                  00011db0    00000009     curve_control_v4.o (.rodata.str1.16351345713863443003.1)
+                  00011db9    00000009     curve_control_q2.o (.rodata.str1.18063372638663572880.1)
+                  00011dc2    00000009     main.o (.rodata.str1.18227636981041470289.1)
+                  00011dcb    00000009     curve_control_v5.o (.rodata.str1.2338023165983849702.1)
+                  00011dd4    00000009     curve_control_q2.o (.rodata.str1.2476311477916759975.1)
+                  00011ddd    00000009     curve_control_v4.o (.rodata.str1.2782048826308065172.1)
+                  00011de6    00000009     curve_control_v4.o (.rodata.str1.3798165815679913760.1)
+                  00011def    00000009     curve_control_q2.o (.rodata.str1.423682416651329065.1)
+                  00011df8    00000009     curve_control_v5.o (.rodata.str1.4906364569853789704.1)
+                  00011e01    00000009     curve_control_v5.o (.rodata.str1.5124578994286619623.1)
+                  00011e0a    00000009     curve_control_q2.o (.rodata.str1.5224194881743185477.1)
+                  00011e13    00000009     curve_control_v4.o (.rodata.str1.6092324763546605085.1)
+                  00011e1c    00000009     curve_control_q2.o (.rodata.str1.6335129272847673625.1)
+                  00011e25    00000009     curve_control_v5.o (.rodata.str1.6856170066211118364.1)
+                  00011e2e    00000009     curve_control_v4.o (.rodata.str1.7563834387050621871.1)
+                  00011e37    00000009     curve_control_v5.o (.rodata.str1.7967865634623334501.1)
+                  00011e40    00000009     curve_control_v4.o (.rodata.str1.9219738293339624090.1)
+                  00011e49    00000003     ti_msp_dl_config.o (.rodata.gSERVOClockConfig)
+                  00011e4c    00000008     ti_msp_dl_config.o (.rodata.gMOTORConfig)
+                  00011e54    00000008     ti_msp_dl_config.o (.rodata.gSERVOConfig)
+                  00011e5c    00000008     mode_q3.o (.rodata.str1.12440744705780888960.1)
+                  00011e64    00000008     ball_controller.o (.rodata.str1.15373548251272383638.1)
+                  00011e6c    00000007     mode_q5.o (.rodata.str1.15611696434259667401.1)
+                  00011e73    00000007     mode_q4.o (.rodata.str1.18043278854847467344.1)
+                  00011e7a    00000007     mode_q3.o (.rodata.str1.5411476461123188733.1)
+                  00011e81    00000007     mode_q2.o (.rodata.str1.653270486547990476.1)
+                  00011e88    00000007     ball_controller.o (.rodata.str1.7514206647273068161.1)
+                  00011e8f    00000006     ball_controller.o (.rodata.str1.9965913147273296121.1)
+                  00011e95    00000005     curve_control_v4.o (.rodata.CurveControlV4_ErrorMmQ8.positions_mm)
+                  00011e9a    00000005     curve_control_v5.o (.rodata.CurveControlV5_ErrorMmQ8.positions_mm)
+                  00011e9f    00000005     curve_control_q2.o (.rodata.Q2CurveControl_ErrorMmQ8.positions_mm)
+                  00011ea4    00000005     ball_controller.o (.rodata.str1.10494626577905757636.1)
+                  00011ea9    00000005     ball_controller.o (.rodata.str1.10939236789976858227.1)
+                  00011eae    00000005     ball_controller.o (.rodata.str1.1104434689246913876.1)
+                  00011eb3    00000005     ball_controller.o (.rodata.str1.12132770121777714502.1)
+                  00011eb8    00000005     mode_q3.o (.rodata.str1.13375243626408535846.1)
+                  00011ebd    00000005     ball_controller.o (.rodata.str1.13848612681546166471.1)
+                  00011ec2    00000005     ball_controller.o (.rodata.str1.15107819391556604689.1)
+                  00011ec7    00000005     ball_controller.o (.rodata.str1.15420841638448990988.1)
+                  00011ecc    00000005     mode_q4.o (.rodata.str1.16397872794373831453.1)
+                  00011ed1    00000005     ball_controller.o (.rodata.str1.16986257614558279921.1)
+                  00011ed6    00000005     ball_controller.o (.rodata.str1.17905621574516245696.1)
+                  00011edb    00000005     ball_controller.o (.rodata.str1.2307660527429307428.1)
+                  00011ee0    00000005     ball_controller.o (.rodata.str1.3183613243663939604.1)
+                  00011ee5    00000005     ball_controller.o (.rodata.str1.3804352478133435022.1)
+                  00011eea    00000005     ball_controller.o (.rodata.str1.3822154968170896582.1)
+                  00011eef    00000005     ball_controller.o (.rodata.str1.414734614887975191.1)
+                  00011ef4    00000005     ball_controller.o (.rodata.str1.4358927263972989966.1)
+                  00011ef9    00000005     ball_controller.o (.rodata.str1.4532964936337997190.1)
+                  00011efe    00000005     mode_q5.o (.rodata.str1.4871013768477005065.1)
+                  00011f03    00000005     ball_controller.o (.rodata.str1.537950434228067385.1)
+                  00011f08    00000005     ball_controller.o (.rodata.str1.5380601433434871543.1)
+                  00011f0d    00000005     ball_controller.o (.rodata.str1.5666454689196785302.1)
+                  00011f12    00000005     ball_controller.o (.rodata.str1.6445768864395166464.1)
+                  00011f17    00000005     ball_controller.o (.rodata.str1.6557511496543366014.1)
+                  00011f1c    00000005     ball_controller.o (.rodata.str1.8207778480894621167.1)
+                  00011f21    00000005     ball_controller.o (.rodata.str1.9374701924376197480.1)
+                  00011f26    00000005     ball_controller.o (.rodata.str1.9477710056303676393.1)
+                  00011f2b    00000004     ball_controller.o (.rodata.str1.12858167458430746203.1)
+                  00011f2f    00000004     mode_q5.o (.rodata.str1.15518467767099819893.1)
+                  00011f33    00000004     ball_controller.o (.rodata.str1.16578723093797407074.1)
+                  00011f37    00000004     ball_controller.o (.rodata.str1.17566769756159835881.1)
+                  00011f3b    00000004     ball_controller.o (.rodata.str1.1846432445244231245.1)
+                  00011f3f    00000004     ball_controller.o (.rodata.str1.2309070129460710909.1)
+                  00011f43    00000004     ball_controller.o (.rodata.str1.2545081353386507913.1)
+                  00011f47    00000004     mode_q3.o (.rodata.str1.3471518962308224908.1)
+                  00011f4b    00000004     mode_q4.o (.rodata.str1.3474892823479312614.1)
+                  00011f4f    00000003     ti_msp_dl_config.o (.rodata.gTIMER_PIDClockConfig)
+                  00011f52    00000003     mode_q5.o (.rodata.str1.12032551893987426967.1)
+                  00011f55    00000003     main.o (.rodata.str1.12180500075719773345.1)
+                  00011f58    00000003     mode_q4.o (.rodata.str1.13490347279818074116.1)
+                  00011f5b    00000003     main.o (.rodata.str1.14112174005742061988.1)
+                  00011f5e    00000003     main.o (.rodata.str1.16265332423659789559.1)
+                  00011f61    00000003     main.o (.rodata.str1.288608917962107522.1)
+                  00011f64    00000003     mode_q3.o (.rodata.str1.4801176681557736149.1)
+                  00011f67    00000003     main.o (.rodata.str1.7702501944640899365.1)
+                  00011f6a    00000002     ti_msp_dl_config.o (.rodata.gMPU6050ClockConfig)
+                  00011f6c    00000002     ti_msp_dl_config.o (.rodata.gOLEDClockConfig)
+                  00011f6e    00000002     ti_msp_dl_config.o (.rodata.gSerialClockConfig)
+                  00011f70    00000002     mode_q3.o (.rodata.str1.18172109582703375473.1)
+                  00011f72    0000000e     --HOLE-- [fill = 0]
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.binit     0    00000000    00000000     
+
+.bss       0    20200000    00004418     UNINITIALIZED
+                  20200000    00003ae8     mode_q3.o (.bss.g_ball)
+                  20203ae8    00000480     (.common:OLED_GRAM)
+                  20203f68    000000bc     (.common:gTIMER_PIDBackup)
+                  20204024    000000a0     (.common:gSERVOBackup)
+                  202040c4    00000064     mode_q5.o (.bss.g_curve)
+                  20204128    00000064     uart.o (.bss.g_uartRxBuilding)
+                  2020418c    00000064     (.common:UART_RxPacket)
+                  202041f0    00000060     mode_q2.o (.bss.g_curve)
+                  20204250    00000060     mode_q4.o (.bss.g_curve)
+                  202042b0    0000003c     mode_q4.o (.bss.Ball_PID)
+                  202042ec    0000003c     mode_q5.o (.bss.Ball_PID)
+                  20204328    0000002c     mode_q5.o (.bss.g_telemetry)
+                  20204354    00000028     mode_q2.o (.bss.g_telemetry)
+                  2020437c    00000028     mode_q4.o (.bss.g_telemetry)
+                  202043a4    0000000c     mode_q3.o (.bss.g_ui)
+                  202043b0    00000004     mode_q4.o (.bss.Ball_Dx)
+                  202043b4    00000004     mode_q5.o (.bss.Ball_Dx)
+                  202043b8    00000004     mode_q4.o (.bss.Ball_Servo_Angle)
+                  202043bc    00000004     mode_q5.o (.bss.Ball_Servo_Angle)
+                  202043c0    00000004     encoder.o (.bss.Encoder_Count1)
+                  202043c4    00000004     encoder.o (.bss.Encoder_Count2)
+                  202043c8    00000004     mode_q4.o (.bss.UART_RxCount)
+                  202043cc    00000004     mode_q5.o (.bss.UART_RxCount)
+                  202043d0    00000004     mode_q4.o (.bss.g_ball_start_ms)
+                  202043d4    00000004     mode_q5.o (.bss.g_ball_start_ms)
+                  202043d8    00000004     mode_q2.o (.bss.g_last_oled_ms)
+                  202043dc    00000004     mode_q4.o (.bss.g_last_oled_ms)
+                  202043e0    00000004     mode_q5.o (.bss.g_last_oled_ms)
+                  202043e4    00000004     uart.o (.bss.g_uartPendingMaxGapMs)
+                  202043e8    00000004     uart.o (.bss.g_uartPreviousArrivalMs)
+                  202043ec    00000004     mode_q2.o (.bss.g_uptime_ms)
+                  202043f0    00000004     mode_q4.o (.bss.g_uptime_ms)
+                  202043f4    00000004     mode_q5.o (.bss.g_uptime_ms)
+                  202043f8    00000004     (.common:UART_RxOverwriteCount)
+                  202043fc    00000004     (.common:UART_RxPacketTimeMs)
+                  20204400    00000001     mode_q4.o (.bss.Ball_Control_Enable)
+                  20204401    00000001     mode_q5.o (.bss.Ball_Control_Enable)
+                  20204402    00000001     mode_q4.o (.bss.Ball_Within1cm)
+                  20204403    00000001     mode_q5.o (.bss.Ball_Within1cm)
+                  20204404    00000001     key.o (.bss.Key_Tick.Count)
+                  20204405    00000001     key.o (.bss.Key_Tick.CurrState)
+                  20204406    00000001     key.o (.bss.Key_Tick.PrevState)
+                  20204407    00000001     mode_q4.o (.bss.g_ball_valid_prev)
+                  20204408    00000001     mode_q5.o (.bss.g_ball_valid_prev)
+                  20204409    00000001     mode_q2.o (.bss.g_control_divider)
+                  2020440a    00000001     mode_q4.o (.bss.g_control_divider)
+                  2020440b    00000001     mode_q5.o (.bss.g_control_divider)
+                  2020440c    00000001     mode_q4.o (.bss.g_curve_start_pending)
+                  2020440d    00000001     mode_q5.o (.bss.g_curve_start_pending)
+                  2020440e    00000001     mode_q2.o (.bss.g_start_requested)
+                  2020440f    00000001     mode_q2.o (.bss.g_started_once)
+                  20204410    00000001     mode_q4.o (.bss.g_started_once)
+                  20204411    00000001     mode_q5.o (.bss.g_started_once)
+                  20204412    00000001     uart.o (.bss.g_uartHasPreviousArrival)
+                  20204413    00000001     uart.o (.bss.g_uartRxLength)
+                  20204414    00000001     uart.o (.bss.g_uartRxOverflow)
+                  20204415    00000001     uart.o (.bss.g_uartRxState)
+                  20204416    00000001     (.common:Key_Num)
+                  20204417    00000001     (.common:UART_RxFlag)
+
+.data      0    20204418    0000004b     UNINITIALIZED
+                  20204418    00000005     huidu.o (.data.huidu_value)
+                  2020441d    00000001     main.o (.data.g_active_mode)
+                  2020441e    00000002     mode_q3.o (.data.g_dump_count)
+                  20204420    00000004     libc.a : aeabi_portable.c.obj (.data.__aeabi_errno)
+                  20204424    00000004     mode_q3.o (.data.g_dump_next_ms)
+                  20204428    00000004     main.o (.data.g_last_menu_refresh_ms)
+                  2020442c    00000004     mode_q3.o (.data.g_oled_next_page_ms)
+                  20204430    00000004     main.o (.data.g_run_seconds)
+                  20204434    00000004     main.o (.data.g_run_start_ms)
+                  20204438    00000004     mode_q5.o (.data.g_target_cm)
+                  2020443c    00000004     mode_q5.o (.data.g_target_dx_px)
+                  20204440    00000004     mode_q3.o (.data.g_task_start_ms)
+                  20204444    00000004     mode_q3.o (.data.g_uart_rx_count)
+                  20204448    00000004     mode_q3.o (.data.g_vision_reference_ms)
+                  2020444c    00000004     mpu_port.o (.data.sys_tick_ms)
+                  20204450    00000004     main.o (.data.system_ms)
+                  20204454    00000002     mode_q3.o (.data.g_dump_index)
+                  20204456    00000002     mode_q3.o (.data.g_last_servo10)
+                  20204458    00000001     main.o (.data.g_app_state)
+                  20204459    00000001     mode_q3.o (.data.g_dump_active)
+                  2020445a    00000001     mode_q3.o (.data.g_dump_header_sent)
+                  2020445b    00000001     oled.o (.data.g_oledRefreshPage)
+                  2020445c    00000001     mode_q3.o (.data.g_oled_b_page)
+                  2020445d    00000001     main.o (.data.g_selected_mode)
+                  2020445e    00000001     mode_q3.o (.data.g_task_started_once)
+                  2020445f    00000001     mode_q3.o (.data.g_task_timeout_event)
+                  20204460    00000001     mode_q3.o (.data.g_task_watch_enabled)
+                  20204461    00000001     mode_q3.o (.data.g_vision_timeout_event)
+                  20204462    00000001     mode_q3.o (.data.g_vision_watch_enabled)
+
+.stack     0    20207e00    00000200     UNINITIALIZED
+                  20207e00    00000004     libc.a : boot_cortex_m.c.obj (.stack)
+                  20207e04    000001fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20200000    00000000     UNINITIALIZED
+
+__llvm_prf_bits 
+*          0    20200000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                         code    ro data   rw data
+       ------                         ----    -------   -------
+    .\verify_clean\
+       mode_q3.o                      4614    953       15126  
+       ball_controller.o              19076   165       0      
+       mode_q5.o                      2984    205       242    
+       mode_q4.o                      2750    206       226    
+       curve_control_v5.o             2924    68        0      
+       curve_control_q2.o             2788    59        0      
+       curve_control_v4.o             2788    59        0      
+       ball_pid_bank.o                1356    144       0      
+       main.o                         1250    73        19     
+       mode_q2.o                      1038    61        147    
+       ball_estimator.o               836     0         0      
+       ball_fast_estimator.o          824     0         0      
+       pid.o                          648     0         0      
+       curve_pid.o                    548     0         0      
+       pid_q2.o                       548     0         0      
+       ball_quiet_observer.o          522     0         0      
+       huidu.o                        254     0         5      
+       startup_mspm0g350x_ticlang.o   8       192       0      
+       ball_ui.o                      152     0         0      
+       delay.o                        28      0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         45936   2185      15765  
+                                                               
+    .\verify_clean\Debug\
+       ti_msp_dl_config.o             3406    101       348    
+    +--+------------------------------+-------+---------+---------+
+       Total:                         3406    101       348    
+                                                               
+    .\verify_clean\driver\
+       oled.o                         3170    6080      1153   
+       uart.o                         1050    0         221    
+       encoder.o                      624     0         8      
+       motor.o                        488     0         0      
+       key.o                          332     0         4      
+       servo.o                        108     0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         5772    6080      1386   
+                                                               
+    .\verify_clean\driver\mpu6050\
+       mpu6050.o                      16      0         0      
+       mpu_port.o                     0       0         4      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         16      0         4      
+                                                               
+    C:/TI/mspm0_sdk_2_10_00_04/source/ti/driverlib/lib/ticlang/m0p/mspm0g1x0x_g3x0x/driverlib.a
+       dl_timer.o                     608     0         0      
+       dl_sysctl_mspm0g1x0x_g3x0x.o   416     0         0      
+       dl_uart.o                      138     0         0      
+       dl_i2c.o                       132     0         0      
+       dl_common.o                    10      0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         1304    0         0      
+                                                               
+    F:\MCU\11_TI_MSP\CCS_ide\install\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\lib\armv6m-ti-none-eabi/c/libc.a
+       _printfi.c.obj                 4510    34        0      
+       aeabi_ctype.S.obj              0       257       0      
+       s_scalbn.c.obj                 216     0         0      
+       e_sqrtf.c.obj                  160     0         0      
+       copy_decompress_lzss.c.obj     124     0         0      
+       s_frexp.c.obj                  92      0         0      
+       _ltoa.c.obj                    88      0         0      
+       vsprintf.c.obj                 78      0         0      
+       atoi.c.obj                     64      0         0      
+       autoinit.c.obj                 60      0         0      
+       boot_cortex_m.c.obj            56      0         0      
+       memccpy.c.obj                  34      0         0      
+       copy_decompress_none.c.obj     18      0         0      
+       memcpy16.S.obj                 18      0         0      
+       copy_zero_init.c.obj           16      0         0      
+       wcslen.c.obj                   16      0         0      
+       memset16.S.obj                 14      0         0      
+       aeabi_portable.c.obj           8       0         4      
+       exit.c.obj                     6       0         0      
+       pre_init.c.obj                 4       0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         5582    291       4      
+                                                               
+    F:\MCU\11_TI_MSP\CCS_ide\install\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\lib\armv6m-ti-none-eabi/c/libsysbm.a
+       hostexit.c.obj                 4       0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         4       0         0      
+                                                               
+    F:\MCU\11_TI_MSP\CCS_ide\install\ccs\tools\compiler\ti-cgt-armllvm_4.0.4.LTS\lib\armv6m-ti-none-eabi/libclang_rt.builtins.a
+       adddf3.S.obj                   418     0         0      
+       divdf3.S.obj                   268     0         0      
+       muldf3.S.obj                   228     0         0      
+       comparedf2.c.obj               220     0         0      
+       addsf3.S.obj                   216     0         0      
+       udivmoddi4.S.obj               162     0         0      
+       mulsf3.S.obj                   140     0         0      
+       divsf3.S.obj                   130     0         0      
+       comparesf2.S.obj               118     0         0      
+       aeabi_dcmp.S.obj               98      0         0      
+       aeabi_fcmp.S.obj               98      0         0      
+       aeabi_idivmod.S.obj            86      0         0      
+       fixdfsi.S.obj                  74      0         0      
+       fixunsdfsi.S.obj               66      0         0      
+       aeabi_uidivmod.S.obj           64      0         0      
+       floatsisf.S.obj                60      0         0      
+       muldsi3.S.obj                  58      0         0      
+       fixsfsi.S.obj                  56      0         0      
+       fixunssfsi.S.obj               50      0         0      
+       floatsidf.S.obj                44      0         0      
+       floatunsisf.S.obj              40      0         0      
+       floatunsidf.S.obj              36      0         0      
+       muldi3.S.obj                   36      0         0      
+       ashldi3.S.obj                  30      0         0      
+       aeabi_memset.S.obj             26      0         0      
+       aeabi_uldivmod.S.obj           20      0         0      
+       aeabi_memcpy.S.obj             8       0         0      
+       aeabi_div0.c.obj               4       0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         2854    0         0      
+                                                               
+       Stack:                         0       0         512    
+       Linker Generated:              0       51        0      
+    +--+------------------------------+-------+---------+---------+
+       Grand Total:                   64874   8708      18019  
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00011fa4 records: 2, size/record: 8, table size: 16
+	.data: load addr=00011f80, load size=0000000f bytes, run addr=20204418, run size=0000004b bytes, compression=lzss
+	.bss: load addr=00011f9c, load size=00000008 bytes, run addr=20200000, run size=00004418 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00011f90 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+FAR CALL TRAMPOLINES
+
+callee name               trampoline name
+   callee addr  tramp addr   call addr  call info
+--------------  -----------  ---------  ----------------
+__aeabi_dsub              $Tramp$TT$L$PI$$__aeabi_dsub
+   00005a79     0000fe04     0000fe02   libc.a : _printfi.c.obj (.text.OUTLINED_FUNCTION_0)
+_c_int00_noargs           $Tramp$TT$L$PI$$_c_int00_noargs
+   0000f2f5     0000fe4c     0000fe46   startup_mspm0g350x_ticlang.o (.text.Reset_Handler)
+
+[2 trampolines]
+[2 trampoline calls]
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                 
+-------   ----                                 
+0000fe3f  ADC0_IRQHandler                      
+0000fe3f  ADC1_IRQHandler                      
+0000fe3f  AES_IRQHandler                       
+0000ce4d  BallController_ApproachReasonShort   
+0000cea9  BallController_BrakeReasonShort      
+0000ed0f  BallController_DataAgeMs             
+0000bc1d  BallController_GetLog                
+0000c4a5  BallController_Init                  
+0000ea6d  BallController_IsActive              
+0000fd49  BallController_IsArmed               
+0000fc59  BallController_IsReady               
+000000c1  BallController_OnMeasurement         
+00009a91  BallController_OnVisionFault         
+0000a07d  BallController_RequestAbort          
+0000a8ad  BallController_RequestStart          
+0000b881  BallController_RequestTimeout        
+0000b905  BallController_ResultShort           
+0000f56d  BallController_SetLogFrozen          
+0000a121  BallController_SettleModeShort       
+00008dc1  BallController_StateShort            
+0000fa65  BallController_TaskElapsedMs         
+0000c7ad  BallController_TaskTimerActive       
+0000eaa1  BallController_VisionWatchActive     
+000058e5  BallEstimator_Add                    
+0000fc69  BallEstimator_Init                   
+0000fba5  BallEstimator_Reset                  
+000064bd  BallFastEstimator_Add                
+0000fc79  BallFastEstimator_Init               
+0000fbb7  BallFastEstimator_Reset              
+0000ed3f  BallFastEstimator_Seed               
+0000fc89  BallPidBank_Init                     
+0000fbc9  BallPidBank_Reset                    
+0000c817  BallPidBank_ResetDynamics            
+0000eca9  BallPidBank_ResetIntegrals           
+00002ff5  BallPidBank_Update                   
+000068d1  BallQuietObserver_Add                
+0000fc99  BallQuietObserver_Init               
+0000fbdb  BallQuietObserver_Reset              
+0000f369  BallUiThrottle_Init                  
+0000fd57  BallUiThrottle_Request               
+0000c8e9  BallUiThrottle_TakeRefresh           
+0000fe42  C$$EXIT                              
+0000fe3f  CANFD0_IRQHandler                    
+0000a9dd  CurveControlV4_ErrorMmQ8             
+0000b1f9  CurveControlV4_FilteredMask          
+0000e1e1  CurveControlV4_GetOutput             
+0000af21  CurveControlV4_Init                  
+00007f3d  CurveControlV4_PushSample1ms         
+0000a4f7  CurveControlV4_Start                 
+0000c089  CurveControlV4_StateName             
+00005205  CurveControlV4_Step5ms               
+0000d1d9  CurveControlV4_StopImmediate         
+0000aa75  CurveControlV5_ErrorMmQ8             
+0000b289  CurveControlV5_FilteredMask          
+0000def1  CurveControlV5_GetOutput             
+0000aba5  CurveControlV5_Init                  
+0000803f  CurveControlV5_PushSample1ms         
+0000a269  CurveControlV5_Start                 
+0000b771  CurveControlV5_StateName             
+00004659  CurveControlV5_Step5ms               
+0000cf61  CurveControlV5_StopImmediate         
+0000eeed  Curve_PID_Reset                      
+00004a4d  Curve_PID_Update                     
+0000fe3f  DAC0_IRQHandler                      
+0000fdf1  DL_Common_delayCycles                
+0000cded  DL_I2C_fillControllerTXFIFO          
+0000f343  DL_I2C_setClockConfig                
+0000f669  DL_SYSCTL_configFCC                  
+000093e9  DL_SYSCTL_configSYSPLL               
+0000ca19  DL_SYSCTL_setHFCLKSourceHFXTParams   
+0000dfc1  DL_SYSCTL_switchMCLKfromSYSOSCtoHSCLK
+00007d35  DL_Timer_initFourCCPWMMode           
+00008341  DL_Timer_initTimerMode               
+0000f6f5  DL_Timer_setCaptCompUpdateMethod     
+0000f94d  DL_Timer_setCaptureCompareOutCtl     
+0000fcf9  DL_Timer_setCaptureCompareValue      
+0000f711  DL_Timer_setClockConfig              
+0000dc69  DL_UART_init                         
+0000fc23  DL_UART_setClockConfig               
+0000eda1  DL_UART_transmitDataBlocking         
+0000fe3f  DMA_IRQHandler                       
+0000fe3f  Default_Handler                      
+0000cfbd  Encoder_Init                         
+0000f3d5  Encoder_ReadDelta1                   
+0000f3f9  Encoder_ReadDelta2                   
+0000f2a5  Encoder_Reset                        
+0000fe3f  GROUP0_IRQHandler                    
+00009ce5  GROUP1_IRQHandler                    
+0000fe43  HOSTexit                             
+0000fe3f  HardFault_Handler                    
+0000fe3f  I2C0_IRQHandler                      
+0000fe3f  I2C1_IRQHandler                      
+0000cc0d  Key_GetNum                           
+00003da7  Key_Init                             
+20204416  Key_Num                              
+0000cc6d  Key_Tick                             
+0000c515  ModeQ2_Init                          
+0000e619  ModeQ2_Loop                          
+0000fb41  ModeQ2_Start                         
+0000d985  ModeQ2_Stop                          
+0000661d  ModeQ2_Tick1ms                       
+00009c21  ModeQ3_Init                          
+00003da9  ModeQ3_Loop                          
+0000e36d  ModeQ3_Start                         
+0000d019  ModeQ3_Stop                          
+0000c585  ModeQ3_Tick1ms                       
+0000922d  ModeQ4_Init                          
+0000e655  ModeQ4_Loop                          
+0000dcb1  ModeQ4_Start                         
+0000ba91  ModeQ4_Stop                          
+00004e39  ModeQ4_Tick1ms                       
+0000fda9  ModeQ5_GetTargetCm                   
+0000843d  ModeQ5_Init                          
+0000e691  ModeQ5_Loop                          
+0000c6d5  ModeQ5_SetTargetStep                 
+0000dd41  ModeQ5_Start                         
+0000adf9  ModeQ5_Stop                          
+0000558d  ModeQ5_Tick1ms                       
+0000eb3d  Motor1_Brake                         
+0000bd1d  Motor1_SetSpeed                      
+0000eb71  Motor2_Brake                         
+0000bd9d  Motor2_SetSpeed                      
+0000fdb5  Motor_StopSafe                       
+0000fe3f  NMI_Handler                          
+0000fdc1  OLED_Clear                           
+0000d2e1  OLED_ClearBuffer                     
+0000ca7d  OLED_ClearPoint                      
+0000eba5  OLED_ColorTurn                       
+0000ddd1  OLED_DisplayTurn                     
+0000de19  OLED_DrawPoint                       
+0000ee01  OLED_DrawPrintf                      
+20203ae8  OLED_GRAM                            
+0000872d  OLED_Init                            
+0000f781  OLED_Refresh                         
+0000fdcd  OLED_RefreshBegin                    
+0000f50d  OLED_RefreshBusy                     
+0000a30d  OLED_RefreshStep                     
+00006779  OLED_ShowChar                        
+0000c2d5  OLED_WR_Byte                         
+00003b1f  PID_Update                           
+0000fe3f  PendSV_Handler                       
+0000ab0d  Q2CurveControl_ErrorMmQ8             
+0000b319  Q2CurveControl_FilteredMask          
+0000e223  Q2CurveControl_GetOutput             
+0000b045  Q2CurveControl_Init                  
+00008141  Q2CurveControl_PushSample1ms         
+0000a597  Q2CurveControl_Start                 
+0000c101  Q2CurveControl_StateName             
+000053c9  Q2CurveControl_Step5ms               
+0000d339  Q2CurveControl_StopImmediate         
+0000ef49  Q2_PID_Reset                         
+00004c43  Q2_PID_Update                        
+0000fe3f  RTC_IRQHandler                       
+0000fe47  Reset_Handler                        
+0000fe3f  SPI0_IRQHandler                      
+0000fe3f  SPI1_IRQHandler                      
+0000fe3f  SVC_Handler                          
+00004005  SYSCFG_DL_GPIO_init                  
+0000b435  SYSCFG_DL_MOTOR_init                 
+0000cccd  SYSCFG_DL_MPU6050_init               
+0000cd2d  SYSCFG_DL_OLED_init                  
+0000b4c1  SYSCFG_DL_SERVO_init                 
+00008cd9  SYSCFG_DL_SYSCTL_SYSPLL_init         
+0000c349  SYSCFG_DL_SYSCTL_init                
+0000fd09  SYSCFG_DL_SYSTICK_init               
+0000dea9  SYSCFG_DL_Serial_init                
+0000ebd9  SYSCFG_DL_TIMER_PID_init             
+0000e159  SYSCFG_DL_init                       
+0000a639  SYSCFG_DL_initPower                  
+0000c741  Servo_SetAngle1                      
+0000fd19  SysTick_Handler                      
+0000a3b1  TIMA0_IRQHandler                     
+0000fe3f  TIMA1_IRQHandler                     
+0000fe3f  TIMG0_IRQHandler                     
+0000fe3f  TIMG12_IRQHandler                    
+0000fe3f  TIMG6_IRQHandler                     
+0000fe3f  TIMG7_IRQHandler                     
+0000fe3f  TIMG8_IRQHandler                     
+0000fc35  TI_memcpy_small                      
+0000fd81  TI_memset_small                      
+00008af9  UART0_IRQHandler                     
+0000fe3f  UART1_IRQHandler                     
+0000fe3f  UART2_IRQHandler                     
+0000fe3f  UART3_IRQHandler                     
+0000ee31  UART_Printf                          
+0000c3bd  UART_ResetRxMailbox                  
+20204417  UART_RxFlag                          
+202043f8  UART_RxOverwriteCount                
+2020418c  UART_RxPacket                        
+202043fc  UART_RxPacketTimeMs                  
+0000f749  UART_SendByte                        
+0000e9fb  UART_SendString                      
+00008be9  UART_TakeLatestPacket                
+20208000  __STACK_END                          
+00000200  __STACK_SIZE                         
+00000000  __TI_ATRegion0_region_sz             
+00000000  __TI_ATRegion0_src_addr              
+00000000  __TI_ATRegion0_trg_addr              
+00000000  __TI_ATRegion1_region_sz             
+00000000  __TI_ATRegion1_src_addr              
+00000000  __TI_ATRegion1_trg_addr              
+00000000  __TI_ATRegion2_region_sz             
+00000000  __TI_ATRegion2_src_addr              
+00000000  __TI_ATRegion2_trg_addr              
+00011fa4  __TI_CINIT_Base                      
+00011fb4  __TI_CINIT_Limit                     
+00011fb4  __TI_CINIT_Warm                      
+00011f90  __TI_Handler_Table_Base              
+00011f9c  __TI_Handler_Table_Limit             
+0000e745  __TI_auto_init_nobinit_nopinit       
+0000c00d  __TI_decompress_lzss                 
+0000fc47  __TI_decompress_none                 
+0000d391  __TI_ltoa                            
+ffffffff  __TI_pprof_out_hndl                  
+00000e6d  __TI_printfi                         
+ffffffff  __TI_prof_data_size                  
+ffffffff  __TI_prof_data_start                 
+00000000  __TI_static_base__                   
+0000fd39  __TI_zero_init                       
+00005a83  __adddf3                             
+00009757  __addsf3                             
+00011750  __aeabi_ctype_table_                 
+00011750  __aeabi_ctype_table_C                
+0000db45  __aeabi_d2iz                         
+0000e2a9  __aeabi_d2uiz                        
+00005a83  __aeabi_dadd                         
+0000cb45  __aeabi_dcmpeq                       
+0000cb81  __aeabi_dcmpge                       
+0000cb95  __aeabi_dcmpgt                       
+0000cb6d  __aeabi_dcmple                       
+0000cb59  __aeabi_dcmplt                       
+00007b25  __aeabi_ddiv                         
+00008f89  __aeabi_dmul                         
+00005a79  __aeabi_dsub                         
+20204420  __aeabi_errno                        
+0000fe29  __aeabi_errno_addr                   
+0000ea35  __aeabi_f2iz                         
+0000ecdd  __aeabi_f2uiz                        
+00009757  __aeabi_fadd                         
+0000cba9  __aeabi_fcmpeq                       
+0000cbe5  __aeabi_fcmpge                       
+0000cbf9  __aeabi_fcmpgt                       
+0000cbd1  __aeabi_fcmple                       
+0000cbbd  __aeabi_fcmplt                       
+0000bb99  __aeabi_fdiv                         
+0000b54d  __aeabi_fmul                         
+0000974d  __aeabi_fsub                         
+0000f131  __aeabi_i2d                          
+0000e6cd  __aeabi_i2f                          
+0000d441  __aeabi_idiv                         
+00005c0b  __aeabi_idiv0                        
+0000d441  __aeabi_idivmod                      
+000064bb  __aeabi_ldiv0                        
+0000f54d  __aeabi_llsl                         
+0000f441  __aeabi_lmul                         
+0000fde5  __aeabi_memclr                       
+0000fde5  __aeabi_memclr4                      
+0000fde5  __aeabi_memclr8                      
+0000fe31  __aeabi_memcpy                       
+0000fe31  __aeabi_memcpy4                      
+0000fe31  __aeabi_memcpy8                      
+0000fd65  __aeabi_memset                       
+0000fd65  __aeabi_memset4                      
+0000fd65  __aeabi_memset8                      
+0000f41d  __aeabi_ui2d                         
+0000f2cd  __aeabi_ui2f                         
+0000e3ed  __aeabi_uidiv                        
+0000e3ed  __aeabi_uidivmod                     
+0000fb7d  __aeabi_uldivmod                     
+0000f54d  __ashldi3                            
+ffffffff  __binit__                            
+0000c881  __cmpdf2                             
+0000e8a5  __cmpsf2                             
+00007b25  __divdf3                             
+0000bb99  __divsf3                             
+0000c881  __eqdf2                              
+0000e8a5  __eqsf2                              
+0000db45  __fixdfsi                            
+0000ea35  __fixsfsi                            
+0000e2a9  __fixunsdfsi                         
+0000ecdd  __fixunssfsi                         
+0000f131  __floatsidf                          
+0000e6cd  __floatsisf                          
+0000f41d  __floatunsidf                        
+0000f2cd  __floatunsisf                        
+0000c431  __gedf2                              
+0000e709  __gesf2                              
+0000c431  __gtdf2                              
+0000e709  __gtsf2                              
+0000c881  __ledf2                              
+0000e8a5  __lesf2                              
+0000c881  __ltdf2                              
+0000e8a5  __ltsf2                              
+UNDEFED   __mpu_init                           
+00008f89  __muldf3                             
+0000f441  __muldi3                             
+0000e8e1  __muldsi3                            
+0000b54d  __mulsf3                             
+0000c881  __nedf2                              
+0000e8a5  __nesf2                              
+20207e00  __stack                              
+20200000  __start___llvm_prf_bits              
+20200000  __start___llvm_prf_cnts              
+20200000  __stop___llvm_prf_bits               
+20200000  __stop___llvm_prf_cnts               
+00005a79  __subdf3                             
+0000974d  __subsf3                             
+0000a455  __udivmoddi4                         
+0000f2f5  _c_int00_noargs                      
+UNDEFED   _system_post_cinit                   
+0000fe5d  _system_pre_init                     
+0000fe39  abort                                
+000111ac  asc2_1206                            
+00010bbc  asc2_1608                            
+0000fe60  asc2_2412                            
+0000e42d  atoi                                 
+ffffffff  binit                                
+0000f765  delay_ms                             
+0000d075  frexp                                
+0000d075  frexpl                               
+20204024  gSERVOBackup                         
+20203f68  gTIMER_PIDBackup                     
+20204430  g_run_seconds                        
+0000ec75  get_gpio_state                       
+0000d719  huidu_get_mask                       
+0000cae1  huidu_get_value                      
+20204418  huidu_value                          
+00000000  interruptVectors                     
+00009675  ldexp                                
+00009675  ldexpl                               
+00009825  main                                 
+0000f4a9  memccpy                              
+00009675  scalbn                               
+00009675  scalbnl                              
+0000a6d9  sqrtf                                
+2020444c  sys_tick_ms                          
+20204450  system_ms                            
+0000f15d  vsprintf                             
+0000fd29  wcslen                               
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                 
+-------   ----                                 
+00000000  __TI_ATRegion0_region_sz             
+00000000  __TI_ATRegion0_src_addr              
+00000000  __TI_ATRegion0_trg_addr              
+00000000  __TI_ATRegion1_region_sz             
+00000000  __TI_ATRegion1_src_addr              
+00000000  __TI_ATRegion1_trg_addr              
+00000000  __TI_ATRegion2_region_sz             
+00000000  __TI_ATRegion2_src_addr              
+00000000  __TI_ATRegion2_trg_addr              
+00000000  __TI_static_base__                   
+00000000  interruptVectors                     
+000000c1  BallController_OnMeasurement         
+00000200  __STACK_SIZE                         
+00000e6d  __TI_printfi                         
+00002ff5  BallPidBank_Update                   
+00003b1f  PID_Update                           
+00003da7  Key_Init                             
+00003da9  ModeQ3_Loop                          
+00004005  SYSCFG_DL_GPIO_init                  
+00004659  CurveControlV5_Step5ms               
+00004a4d  Curve_PID_Update                     
+00004c43  Q2_PID_Update                        
+00004e39  ModeQ4_Tick1ms                       
+00005205  CurveControlV4_Step5ms               
+000053c9  Q2CurveControl_Step5ms               
+0000558d  ModeQ5_Tick1ms                       
+000058e5  BallEstimator_Add                    
+00005a79  __aeabi_dsub                         
+00005a79  __subdf3                             
+00005a83  __adddf3                             
+00005a83  __aeabi_dadd                         
+00005c0b  __aeabi_idiv0                        
+000064bb  __aeabi_ldiv0                        
+000064bd  BallFastEstimator_Add                
+0000661d  ModeQ2_Tick1ms                       
+00006779  OLED_ShowChar                        
+000068d1  BallQuietObserver_Add                
+00007b25  __aeabi_ddiv                         
+00007b25  __divdf3                             
+00007d35  DL_Timer_initFourCCPWMMode           
+00007f3d  CurveControlV4_PushSample1ms         
+0000803f  CurveControlV5_PushSample1ms         
+00008141  Q2CurveControl_PushSample1ms         
+00008341  DL_Timer_initTimerMode               
+0000843d  ModeQ5_Init                          
+0000872d  OLED_Init                            
+00008af9  UART0_IRQHandler                     
+00008be9  UART_TakeLatestPacket                
+00008cd9  SYSCFG_DL_SYSCTL_SYSPLL_init         
+00008dc1  BallController_StateShort            
+00008f89  __aeabi_dmul                         
+00008f89  __muldf3                             
+0000922d  ModeQ4_Init                          
+000093e9  DL_SYSCTL_configSYSPLL               
+00009675  ldexp                                
+00009675  ldexpl                               
+00009675  scalbn                               
+00009675  scalbnl                              
+0000974d  __aeabi_fsub                         
+0000974d  __subsf3                             
+00009757  __addsf3                             
+00009757  __aeabi_fadd                         
+00009825  main                                 
+00009a91  BallController_OnVisionFault         
+00009c21  ModeQ3_Init                          
+00009ce5  GROUP1_IRQHandler                    
+0000a07d  BallController_RequestAbort          
+0000a121  BallController_SettleModeShort       
+0000a269  CurveControlV5_Start                 
+0000a30d  OLED_RefreshStep                     
+0000a3b1  TIMA0_IRQHandler                     
+0000a455  __udivmoddi4                         
+0000a4f7  CurveControlV4_Start                 
+0000a597  Q2CurveControl_Start                 
+0000a639  SYSCFG_DL_initPower                  
+0000a6d9  sqrtf                                
+0000a8ad  BallController_RequestStart          
+0000a9dd  CurveControlV4_ErrorMmQ8             
+0000aa75  CurveControlV5_ErrorMmQ8             
+0000ab0d  Q2CurveControl_ErrorMmQ8             
+0000aba5  CurveControlV5_Init                  
+0000adf9  ModeQ5_Stop                          
+0000af21  CurveControlV4_Init                  
+0000b045  Q2CurveControl_Init                  
+0000b1f9  CurveControlV4_FilteredMask          
+0000b289  CurveControlV5_FilteredMask          
+0000b319  Q2CurveControl_FilteredMask          
+0000b435  SYSCFG_DL_MOTOR_init                 
+0000b4c1  SYSCFG_DL_SERVO_init                 
+0000b54d  __aeabi_fmul                         
+0000b54d  __mulsf3                             
+0000b771  CurveControlV5_StateName             
+0000b881  BallController_RequestTimeout        
+0000b905  BallController_ResultShort           
+0000ba91  ModeQ4_Stop                          
+0000bb99  __aeabi_fdiv                         
+0000bb99  __divsf3                             
+0000bc1d  BallController_GetLog                
+0000bd1d  Motor1_SetSpeed                      
+0000bd9d  Motor2_SetSpeed                      
+0000c00d  __TI_decompress_lzss                 
+0000c089  CurveControlV4_StateName             
+0000c101  Q2CurveControl_StateName             
+0000c2d5  OLED_WR_Byte                         
+0000c349  SYSCFG_DL_SYSCTL_init                
+0000c3bd  UART_ResetRxMailbox                  
+0000c431  __gedf2                              
+0000c431  __gtdf2                              
+0000c4a5  BallController_Init                  
+0000c515  ModeQ2_Init                          
+0000c585  ModeQ3_Tick1ms                       
+0000c6d5  ModeQ5_SetTargetStep                 
+0000c741  Servo_SetAngle1                      
+0000c7ad  BallController_TaskTimerActive       
+0000c817  BallPidBank_ResetDynamics            
+0000c881  __cmpdf2                             
+0000c881  __eqdf2                              
+0000c881  __ledf2                              
+0000c881  __ltdf2                              
+0000c881  __nedf2                              
+0000c8e9  BallUiThrottle_TakeRefresh           
+0000ca19  DL_SYSCTL_setHFCLKSourceHFXTParams   
+0000ca7d  OLED_ClearPoint                      
+0000cae1  huidu_get_value                      
+0000cb45  __aeabi_dcmpeq                       
+0000cb59  __aeabi_dcmplt                       
+0000cb6d  __aeabi_dcmple                       
+0000cb81  __aeabi_dcmpge                       
+0000cb95  __aeabi_dcmpgt                       
+0000cba9  __aeabi_fcmpeq                       
+0000cbbd  __aeabi_fcmplt                       
+0000cbd1  __aeabi_fcmple                       
+0000cbe5  __aeabi_fcmpge                       
+0000cbf9  __aeabi_fcmpgt                       
+0000cc0d  Key_GetNum                           
+0000cc6d  Key_Tick                             
+0000cccd  SYSCFG_DL_MPU6050_init               
+0000cd2d  SYSCFG_DL_OLED_init                  
+0000cded  DL_I2C_fillControllerTXFIFO          
+0000ce4d  BallController_ApproachReasonShort   
+0000cea9  BallController_BrakeReasonShort      
+0000cf61  CurveControlV5_StopImmediate         
+0000cfbd  Encoder_Init                         
+0000d019  ModeQ3_Stop                          
+0000d075  frexp                                
+0000d075  frexpl                               
+0000d1d9  CurveControlV4_StopImmediate         
+0000d2e1  OLED_ClearBuffer                     
+0000d339  Q2CurveControl_StopImmediate         
+0000d391  __TI_ltoa                            
+0000d441  __aeabi_idiv                         
+0000d441  __aeabi_idivmod                      
+0000d719  huidu_get_mask                       
+0000d985  ModeQ2_Stop                          
+0000db45  __aeabi_d2iz                         
+0000db45  __fixdfsi                            
+0000dc69  DL_UART_init                         
+0000dcb1  ModeQ4_Start                         
+0000dd41  ModeQ5_Start                         
+0000ddd1  OLED_DisplayTurn                     
+0000de19  OLED_DrawPoint                       
+0000dea9  SYSCFG_DL_Serial_init                
+0000def1  CurveControlV5_GetOutput             
+0000dfc1  DL_SYSCTL_switchMCLKfromSYSOSCtoHSCLK
+0000e159  SYSCFG_DL_init                       
+0000e1e1  CurveControlV4_GetOutput             
+0000e223  Q2CurveControl_GetOutput             
+0000e2a9  __aeabi_d2uiz                        
+0000e2a9  __fixunsdfsi                         
+0000e36d  ModeQ3_Start                         
+0000e3ed  __aeabi_uidiv                        
+0000e3ed  __aeabi_uidivmod                     
+0000e42d  atoi                                 
+0000e619  ModeQ2_Loop                          
+0000e655  ModeQ4_Loop                          
+0000e691  ModeQ5_Loop                          
+0000e6cd  __aeabi_i2f                          
+0000e6cd  __floatsisf                          
+0000e709  __gesf2                              
+0000e709  __gtsf2                              
+0000e745  __TI_auto_init_nobinit_nopinit       
+0000e8a5  __cmpsf2                             
+0000e8a5  __eqsf2                              
+0000e8a5  __lesf2                              
+0000e8a5  __ltsf2                              
+0000e8a5  __nesf2                              
+0000e8e1  __muldsi3                            
+0000e9fb  UART_SendString                      
+0000ea35  __aeabi_f2iz                         
+0000ea35  __fixsfsi                            
+0000ea6d  BallController_IsActive              
+0000eaa1  BallController_VisionWatchActive     
+0000eb3d  Motor1_Brake                         
+0000eb71  Motor2_Brake                         
+0000eba5  OLED_ColorTurn                       
+0000ebd9  SYSCFG_DL_TIMER_PID_init             
+0000ec75  get_gpio_state                       
+0000eca9  BallPidBank_ResetIntegrals           
+0000ecdd  __aeabi_f2uiz                        
+0000ecdd  __fixunssfsi                         
+0000ed0f  BallController_DataAgeMs             
+0000ed3f  BallFastEstimator_Seed               
+0000eda1  DL_UART_transmitDataBlocking         
+0000ee01  OLED_DrawPrintf                      
+0000ee31  UART_Printf                          
+0000eeed  Curve_PID_Reset                      
+0000ef49  Q2_PID_Reset                         
+0000f131  __aeabi_i2d                          
+0000f131  __floatsidf                          
+0000f15d  vsprintf                             
+0000f2a5  Encoder_Reset                        
+0000f2cd  __aeabi_ui2f                         
+0000f2cd  __floatunsisf                        
+0000f2f5  _c_int00_noargs                      
+0000f343  DL_I2C_setClockConfig                
+0000f369  BallUiThrottle_Init                  
+0000f3d5  Encoder_ReadDelta1                   
+0000f3f9  Encoder_ReadDelta2                   
+0000f41d  __aeabi_ui2d                         
+0000f41d  __floatunsidf                        
+0000f441  __aeabi_lmul                         
+0000f441  __muldi3                             
+0000f4a9  memccpy                              
+0000f50d  OLED_RefreshBusy                     
+0000f54d  __aeabi_llsl                         
+0000f54d  __ashldi3                            
+0000f56d  BallController_SetLogFrozen          
+0000f669  DL_SYSCTL_configFCC                  
+0000f6f5  DL_Timer_setCaptCompUpdateMethod     
+0000f711  DL_Timer_setClockConfig              
+0000f749  UART_SendByte                        
+0000f765  delay_ms                             
+0000f781  OLED_Refresh                         
+0000f94d  DL_Timer_setCaptureCompareOutCtl     
+0000fa65  BallController_TaskElapsedMs         
+0000fb41  ModeQ2_Start                         
+0000fb7d  __aeabi_uldivmod                     
+0000fba5  BallEstimator_Reset                  
+0000fbb7  BallFastEstimator_Reset              
+0000fbc9  BallPidBank_Reset                    
+0000fbdb  BallQuietObserver_Reset              
+0000fc23  DL_UART_setClockConfig               
+0000fc35  TI_memcpy_small                      
+0000fc47  __TI_decompress_none                 
+0000fc59  BallController_IsReady               
+0000fc69  BallEstimator_Init                   
+0000fc79  BallFastEstimator_Init               
+0000fc89  BallPidBank_Init                     
+0000fc99  BallQuietObserver_Init               
+0000fcf9  DL_Timer_setCaptureCompareValue      
+0000fd09  SYSCFG_DL_SYSTICK_init               
+0000fd19  SysTick_Handler                      
+0000fd29  wcslen                               
+0000fd39  __TI_zero_init                       
+0000fd49  BallController_IsArmed               
+0000fd57  BallUiThrottle_Request               
+0000fd65  __aeabi_memset                       
+0000fd65  __aeabi_memset4                      
+0000fd65  __aeabi_memset8                      
+0000fd81  TI_memset_small                      
+0000fda9  ModeQ5_GetTargetCm                   
+0000fdb5  Motor_StopSafe                       
+0000fdc1  OLED_Clear                           
+0000fdcd  OLED_RefreshBegin                    
+0000fde5  __aeabi_memclr                       
+0000fde5  __aeabi_memclr4                      
+0000fde5  __aeabi_memclr8                      
+0000fdf1  DL_Common_delayCycles                
+0000fe29  __aeabi_errno_addr                   
+0000fe31  __aeabi_memcpy                       
+0000fe31  __aeabi_memcpy4                      
+0000fe31  __aeabi_memcpy8                      
+0000fe39  abort                                
+0000fe3f  ADC0_IRQHandler                      
+0000fe3f  ADC1_IRQHandler                      
+0000fe3f  AES_IRQHandler                       
+0000fe3f  CANFD0_IRQHandler                    
+0000fe3f  DAC0_IRQHandler                      
+0000fe3f  DMA_IRQHandler                       
+0000fe3f  Default_Handler                      
+0000fe3f  GROUP0_IRQHandler                    
+0000fe3f  HardFault_Handler                    
+0000fe3f  I2C0_IRQHandler                      
+0000fe3f  I2C1_IRQHandler                      
+0000fe3f  NMI_Handler                          
+0000fe3f  PendSV_Handler                       
+0000fe3f  RTC_IRQHandler                       
+0000fe3f  SPI0_IRQHandler                      
+0000fe3f  SPI1_IRQHandler                      
+0000fe3f  SVC_Handler                          
+0000fe3f  TIMA1_IRQHandler                     
+0000fe3f  TIMG0_IRQHandler                     
+0000fe3f  TIMG12_IRQHandler                    
+0000fe3f  TIMG6_IRQHandler                     
+0000fe3f  TIMG7_IRQHandler                     
+0000fe3f  TIMG8_IRQHandler                     
+0000fe3f  UART1_IRQHandler                     
+0000fe3f  UART2_IRQHandler                     
+0000fe3f  UART3_IRQHandler                     
+0000fe42  C$$EXIT                              
+0000fe43  HOSTexit                             
+0000fe47  Reset_Handler                        
+0000fe5d  _system_pre_init                     
+0000fe60  asc2_2412                            
+00010bbc  asc2_1608                            
+000111ac  asc2_1206                            
+00011750  __aeabi_ctype_table_                 
+00011750  __aeabi_ctype_table_C                
+00011f90  __TI_Handler_Table_Base              
+00011f9c  __TI_Handler_Table_Limit             
+00011fa4  __TI_CINIT_Base                      
+00011fb4  __TI_CINIT_Limit                     
+00011fb4  __TI_CINIT_Warm                      
+20200000  __start___llvm_prf_bits              
+20200000  __start___llvm_prf_cnts              
+20200000  __stop___llvm_prf_bits               
+20200000  __stop___llvm_prf_cnts               
+20203ae8  OLED_GRAM                            
+20203f68  gTIMER_PIDBackup                     
+20204024  gSERVOBackup                         
+2020418c  UART_RxPacket                        
+202043f8  UART_RxOverwriteCount                
+202043fc  UART_RxPacketTimeMs                  
+20204416  Key_Num                              
+20204417  UART_RxFlag                          
+20204418  huidu_value                          
+20204420  __aeabi_errno                        
+20204430  g_run_seconds                        
+2020444c  sys_tick_ms                          
+20204450  system_ms                            
+20207e00  __stack                              
+20208000  __STACK_END                          
+ffffffff  __TI_pprof_out_hndl                  
+ffffffff  __TI_prof_data_size                  
+ffffffff  __TI_prof_data_start                 
+ffffffff  __binit__                            
+ffffffff  binit                                
+UNDEFED   __mpu_init                           
+UNDEFED   _system_post_cinit                   
+
+[339 symbols]

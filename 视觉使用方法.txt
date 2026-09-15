@@ -1,0 +1,1 @@
+将mp_deloyment_source复制到K230的sd卡里然后运行代码即可
